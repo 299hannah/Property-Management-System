@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Agent;
 use App\Models\category;
 use App\Models\post;
+use Illuminate\Auth\Authenticatable;
 
 
 class AgentController extends Controller
@@ -56,6 +57,15 @@ class AgentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // public function generateUniqueCode()
+    // {
+    //     do {
+    //         $code = random_int(100000, 999999);
+    //     } while (Agent::where("post_id", "=", $code)->first());
+    //     return $code;
+    // }
+
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -64,19 +74,23 @@ class AgentController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             // 'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phone' => 'required|numeric',
+            
 
         ]);
         
-
+        // $request->post_id = random_int(100000, 999999);
         $request['password'] = bcrypt($request->password);
         $agent = new agent;
+        
+       
+        // $agent->post_id()->sync($request->post_id);
         // $agent->post_id=$request->session()->get('post_id');
-
         $agent =Agent::create($request->all());
-        $agent->save(); 
+        // dd($request->all());
+        $agent->save();
         // $agent->roles()->sync($request->role);
-        $agent ->categories()->sync($request->categories);
-        $agent ->posts()->sync($request->post);
+        // $agent ->categories()->sync($request->categories);
+        // $agent ->posts()->sync($request->post);
 
 
         return redirect(route('agent.index'));

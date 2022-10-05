@@ -17,7 +17,7 @@ class Tenant extends Authenticatable
     }
     protected $table = 'tenants';
     protected $primarykey = 'id';
-    protected $fillable = ['name','phoneno','houseno','idno','email','password'];
+    protected $fillable = ['name','phoneno','houseno','idno','email','password','post_id'];
     public function getRouteKeyName()
     {
         return 'slug';

@@ -57,7 +57,7 @@
                         </div>
                 </div>
                 <div class="form-group" data-select2-id="51">
-                    <label>Select Location</label>
+                    <label>Select property</label>
                     {{-- <select class="select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" --}}
                       {{-- style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true" name="posts[]"> --}}
 {{--           
@@ -85,7 +85,7 @@
                         @foreach ($posts as $post)
                         <div class="col-lg-3">
                             <div class="checkbox">
-                                <label ><input type="checkbox" name="post[]" value="{{ $post->id }}"
+                                <label ><input type="checkbox" name="post_id" value="{{ $post->id }}"
                                     
                                     @foreach($tenant->posts as $tenant_post)
                                         @if($tenant_post->id == $post->id)

@@ -87,7 +87,7 @@
 
                                 <div class="col-lg-3">
                                     <div class="checkbox">
-                                        <label for=""><input type="checkbox" name="id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
                                     </div>
 
                                 </div>

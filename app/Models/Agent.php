@@ -35,6 +35,7 @@ class Agent extends  Authenticatable
         'email',
         'password',
         'status',
+        'post_id',
     ];
 
     /**

@@ -71,7 +71,17 @@
                                      @endif value="3">Status</label>
                             </div>
                             <div class="row">
-                               @foreach ($posts as $post )
+                                @foreach ($posts as $post )
+
+                                <div class="col-md-3">
+                                    <div class="checkbox">
+                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                    </div>
+
+                                </div>
+
+                                @endforeach
+                               {{-- @foreach ($posts as $post )
 
                                 <div class="col-sm-1">
                                     <div class="checkbox">
@@ -81,7 +91,7 @@
                                 </div>
 
                                 @endforeach
-                      
+                       --}}
                             </div>
                             <div class="card-footer text-center form-group col-lg-12">
                                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>

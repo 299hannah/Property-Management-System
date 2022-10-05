@@ -43,15 +43,15 @@ class AdminTenantsController extends Controller
 
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
-        $tenant =tenant::create($request->all());
+        $tenant =Tenant::create($request->all());
         $tenant->save(); 
 
         // $tenant->roles()->sync($request->role);
-        $tenant ->posts()->sync($request->posts);
+        // $tenant ->posts()->sync($request->posts);
         //  if (Auth::attempt(['email' => $email, 'password' => $password, 'category_id' => '2'])) {
         //         $tenant = Auth::tenant();
         //         Session::put('name', $tenant->name);
-        //     }
+        //     
         return redirect('admin/tenants');
         // return redirect(route('user.index'));
         // return $request->all();
