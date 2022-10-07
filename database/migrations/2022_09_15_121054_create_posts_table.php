@@ -23,8 +23,6 @@ return new class extends Migration
             $table->integer('posted_by')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
-            $table->string('post_id')->references('id')->default('0')->on('posts')->onDelete('cascade');
-            $table->string('agent_id')->default('0');
             // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

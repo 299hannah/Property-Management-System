@@ -5,6 +5,16 @@ use App\Models\DamagedRoom;
 
 class AgentDamagedRoomController extends Controller
 {
+               /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('agent');
+    }
+
     public function index()
     {
         $damagedrooms = DamagedRoom::all();

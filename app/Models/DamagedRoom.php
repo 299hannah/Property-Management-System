@@ -9,5 +9,5 @@ class DamagedRoom extends Model
 {
     protected $table = 'damagedrooms';
     protected $primarykey = 'id';
-    protected $fillable = ['houseno','floor','description',];
+    protected $fillable = ['houseno','floor','description','post_id'];
 }

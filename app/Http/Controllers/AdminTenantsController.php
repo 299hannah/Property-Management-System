@@ -33,11 +33,11 @@ class AdminTenantsController extends Controller
     {
         $this->validate($request,[
             'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'email' => ['required', 'string', 'email', 'max:255' ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
-            'idno' => 'required|numeric','unique:admins',
+            'idno' => 'required|numeric','unique:users',
 
         ]);
 
@@ -82,11 +82,11 @@ class AdminTenantsController extends Controller
     {
             $this->validate($request,[
                 'name' => ['required', 'string', 'max:50'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+                'email' => ['required', 'string', 'email', 'max:255'],
                 // 'password' => ['required', 'string', 'min:8', 'confirmed'],
                 'phoneno' => 'required|numeric',
                 'houseno' => ['required', 'string'],
-                // 'idno' => 'required|numeric','unique:admins',   
+                // 'idno' => 'required|numeric','unique:tenants',   
     
             ]);
 

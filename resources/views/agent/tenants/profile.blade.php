@@ -41,9 +41,9 @@
                     </div> --}}
         </div>
         <div class="col-md-8">
-            <p>Name <b>{{ $tenant->name }}</b></p>
-            <p>Email <b>{{ $tenant->email }}</b></p>
-            <p>Email <b>{{ $tenant->phoneno }}</b></p>
+            <p>Name:   <b>{{ $tenant->name }}</b></p>
+            <p>Email:  <b>{{ $tenant->email }}</b></p>
+            <p>Phone:  <b>{{ $tenant->phoneno }}</b></p>
 
 
 

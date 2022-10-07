@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <h2 class="footer-heading">About Us</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                        <p>The company itself is a very successful company. </p>
                     </div>
                     <div class="col-md-3 mx-auto">
                         <h2 class="footer-heading mb-4">Quick Links</h2>
@@ -49,7 +49,7 @@
                 <p class="copyright"><small>&copy; <script>
                             document.write(new Date().getFullYear());
 
-                        </script> Warehouse. All Rights Reserved.</small></p>
+                        </script> pESAFY </small></p>
                 {{-- </div> --}}
             </div>
 
