@@ -5,7 +5,6 @@
             <div class="card">
                 <div class="card-header">Tenants Page</div>
                 <div class="card-body">
-
                     <form action="{{ url('agent/tenants/store') }}" method="post">
                         {!! csrf_field() !!}
                         <div class="row mb-3">
@@ -35,23 +34,44 @@
                             </div>
                             <div class="col">
                                 <label>Password</label><br>
-                                <input type="text" name="password" id="password" class="form-control"><br>
+                                <input type="password" name="password" id="password" class="form-control"><br>
+                            </div>
+                        </div>
+                        <div class="row mb-3 ">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="password_confirmation">Confirm Password</label>
+                                    <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="confirm password" required>
+                                </div>
+                            </div>
+                            <div class="col">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">Status</label>
-                        <div class="checkbox">
-                            <label ><input type="checkbox" name="status" @if (old('status') == 3)
-                               checked 
-                            @endif value="3">Status</label>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="status"
+                                        @if (old('status') == 3) checked @endif value="3">Status</label>
+                            </div>
                         </div>
-                    </div>
+                        
                         <div style="text-align:center;">
                             <button type="submit" class="btn btn-success center" name="submit">Save</button>
                         </div>
                     </form>
+                    <script>
+                        $(document).ready(function() {
+                            $('.paybtn').click(function() {
+                                var row = $(this).closest('tr');
+                                var exp = row.find('#expensename').text();
+                                $('#hiddenexp').val(exp);
+                                console.log(exp);
+                            });
+                        });
+                    </script>
                 </div>
             </div>
+
         </section>
     </div>
 @stop

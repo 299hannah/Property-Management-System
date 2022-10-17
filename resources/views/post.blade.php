@@ -44,11 +44,10 @@
                         <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image" class="w-25 mb-3 rounded-circle">
                         <h4 class="text-black">Elijah Moses</h4>
                         @foreach ($post->categories as $category)
-                        <small class="pull-right badge" style="margin-right: 5px; border-radius:5px; border: 1px solid gray;">
-                            <a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
+                        Location:  <small class="pull-right badge" style="margin-right: 5px; border-radius:5px; border: 1px solid gray;">
+                          <a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
                         </small>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, iure atque sit ratione
-                            vitae neque! Laborum voluptate eius, laboriosam explicabo!</p>
+                        <p>Suitable to make it a home!!</p>
                         <p><a href="#" class="btn btn-primary btn-sm">Contact Agent</a></p>
                         @endforeach
                     </div>

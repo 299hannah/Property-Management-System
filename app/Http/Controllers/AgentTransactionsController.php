@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transactions;
-
+use Illuminate\Support\Facades\Auth;
 
 class AgentTransactionsController extends Controller
 {
-   
     public function index()
     {
         $transactions = Transactions::all();
-        return view('agent.transactions.index')->with('transactions',$transactions);
+        return view('agent.transactions.index')->with('transactions', $transactions);
+        $transactions  = Transactions::where('post_id', optional(Auth::guard('agent')->user())->id)->get();
     }
 
     public function create()
@@ -31,7 +31,7 @@ class AgentTransactionsController extends Controller
     public function show($id)
     {
         $transaction = Transactions::find($id);
-        return view('agent.transactions.show')->with('transactions',$transaction);
+        return view('agent.transactions.show')->with('transactions', $transaction);
     }
 
     public function edit($id)

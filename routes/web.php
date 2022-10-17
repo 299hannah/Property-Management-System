@@ -13,7 +13,10 @@ use App\Http\Controllers\AgentVacantRoomController;
 use App\Http\Controllers\AgentDamagedRoomController;
 use App\Http\Controllers\AgentTenantsController;
 use App\Http\Controllers\AgentTransactionsController;
+use App\Http\Controllers\AdminTransactionsController;
+// use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TenantProfileController;
+use App\Http\Controllers\TenantsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,16 +55,9 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->group( function
     Route::resource('/post','PropertyController');
     Route::resource('/category','LocationController');
 
-
-
 });
 
 Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function (){
-
-
-    // Route::get('/login','AgentController@Index')->name('agent_login-form');
-    // Route::get('/dashboard/users','AgentController@AgentDashboard')->name('agent.dashboard');
-    // Route::post('/login/owner','AgentController@AgentLogin')->name('agent.login');
 
     Route::get('/dashboard','AgentController@AgentDashboard')->name('agent.dashboard')->middleware('agent');
     Route::get('/login','Auth\LoginController@showLoginForm')->name('agent.login');
@@ -70,6 +66,7 @@ Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function
     Route::get('/logout','AgentController@AgentLogout')->name('agent.logout')->middleware('agent');
     Route::get('/register','AgentController@AgentRegister')->name('agent.register');
     Route::post('/register/create','AgentController@AgentRegisterCreate')->name('agent.register.create');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('agent.profile');
 
 });
 
@@ -81,13 +78,9 @@ Route::get('admin/home', [App\Http\Controllers\Admin\HomeController::class, 'ind
 Route::resource('admin/tenants/', AdminTenantsController::class);
 Route::get('admin/tenants/create', [AdminTenantsController::class, 'create']);
 Route::post('admin/tenants/store', [AdminTenantsController::class, 'store']);
-Route::get('admin/tenants/edit/{tenant_id}', [AdminTenantsController::class, 'edit']);
+Route::get('admin/tenants/edit/{}tenant_id', [AdminTenantsController::class, 'edit']);
 Route::post('admin/tenants/update/{tenant_id}', [AdminTenantsController::class, 'update']);
-// Route::get('tenants/transactions', [TenantsController::class, 'transaction']);
-// Route::post('admin/tenants/store', [AdminTenantsController::class, 'store']);
 Route::get('admin/tenants/show/{tenant_id}', [AdminTenantsController::class, 'show']);
-Route::post('admin/tenants/{tenant_id}', [AdminTenantsController::class, 'destroy']);
-
 
 Route::get('admin/vacantrooms/', [AdminVacantRoomController::class, 'index']);
 Route::get('admin/vacantrooms/create', [AdminVacantRoomController::class, 'create']);
@@ -96,7 +89,6 @@ Route::get('admin/vacantrooms/edit/{vacantroom_id}', [AdminVacantRoomController:
 Route::post('admin/vacantrooms/update/{vacantroom_id}', [AdminVacantRoomController::class, 'update']);
 Route::post('admin/vacantrooms/{vacantroom_id}', [AdminVacantRoomController::class, 'destroy']);
 
-
 Route::get('admin/damagedrooms/', [AdminDamagedRoomController::class, 'index']);
 Route::get('admin/damagedrooms/create', [AdminDamagedRoomController::class, 'create']);
 Route::post('admin/damagedrooms/store', [AdminDamagedRoomController::class, 'store']);
@@ -104,18 +96,14 @@ Route::get('admin/damagedrooms/edit/{damagedroom_id}', [AdminDamagedRoomControll
 Route::post('admin/damagedrooms/update/{damagedroom_id}', [AdminDamagedRoomController::class, 'update']);
 Route::post('admin/damagedrooms/{damagedroom_id}', [AdminDamagedRoomController::class, 'destroy']);
 
-
 Route::get('agent/tenants/', [AgentTenantsController::class, 'index']);
 Route::get('agent/tenants/create', [AgentTenantsController::class, 'create']);
 Route::post('agent/tenants/store', [AgentTenantsController::class, 'store']);
 Route::get('agent/tenants/edit/{tenant_id}', [AgentTenantsController::class, 'edit']);
 Route::post('agent/tenants/update/{tenant_id}', [AgentTenantsController::class, 'update']);
 Route::get('agent/tenants/show/{tenant_id}', [AgentTenantsController::class, 'show']);
-// Route::post('agent/tenants/{tenant_id}', [AgentTenantsController::class, 'destroy']);
 Route::get('tenants/transactions', [TransactionsController::class, 'index']);
 Route::get('tenants/profile', [TenantProfileController::class, 'index'])->name('tenant.profile');
-
-
 
 Route::get('agent/vacantrooms', [AgentVacantRoomController::class, 'index']);
 Route::get('agent/vacantrooms/create', [AgentVacantRoomController::class, 'create']);
@@ -123,7 +111,6 @@ Route::post('agent/vacantrooms/store', [AgentVacantRoomController::class, 'store
 Route::get('agent/vacantrooms/edit/{vacantroom_id}', [AgentVacantRoomController::class, 'edit']);
 Route::post('agent/vacantrooms/update/{vacantroom_id}', [AgentVacantRoomController::class, 'update']);
 Route::post('agent/vacantrooms/{vacantroom_id}', [AgentVacantRoomController::class, 'destroy']);
-
 
 Route::get('agent/damagedrooms/', [AgentDamagedRoomController::class, 'index']);
 Route::get('agent/damagedrooms/create', [AgentDamagedRoomController::class, 'create']);
@@ -138,4 +125,15 @@ Route::post('agent/transactions/store', [AgentTransactionsController::class, 'st
 Route::get('agent/transactions/edit/{transaction_id}', [AgentTransactionsController::class, 'edit']);
 Route::post('agent/transactions/update/{transaction_id}', [AgentTransactionsController::class, 'update']);
 Route::post('agent/transactions/{transaction_id}', [AgentTransactionsController::class, 'destroy']);
+
+Route::get('admin/transactions/', [AdminTransactionsController::class, 'index']);
+// Route::get('tenants/', [TenantController::class, 'index']);
+
+Route::get('tenant/index', [TenantsController::class, 'index']);
+// Route::get('transactions/', [TenantsController::class, 'create']);
+Route::post('transactions/store', [TenantsController::class, 'store']);
+
+
+
+
 

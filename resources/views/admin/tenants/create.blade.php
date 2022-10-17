@@ -11,7 +11,7 @@
                 {!! csrf_field() !!}
                 <div class="row mb-3">
                     <div class="col">
-                        <label>Username</label><br>
+                        <label>Name</label><br>
                         <input type="text" name="name" id="name" class="form-control" placeholder="username" value="{{ old('name') }}"><br>
                     </div>
                     <div class="col">
@@ -46,23 +46,15 @@
                     </div>
                 </div>
                 <div class="row mb-3 ">
-
                     <div class="col">
-
                         <div class="form-group">
                             <label for="password_confirmation">Confirm Password</label>
                             <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="confirm password" required>
                         </div>
                     </div>
-                
-
-                    <div class="col">
-
-                        
+                    <div class="col">  
                     </div>
                 </div>
-              
-
                         <div class="form-group">
                             <label for="">Status</label>
                         
@@ -96,11 +88,9 @@
                             <div class="card-footer text-center form-group col-lg-12">
                                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                                 {{-- <a href='' class="btn btn-info">Back</a> --}}
-        
                             </div>
-                {{-- <div style="text-align:center;">
-                    <button type="submit" class="btn btn-success center" name="submit">Save</button>
-                </div> --}}
+        
+                        </div>
             </form>
         </div>
     </div>

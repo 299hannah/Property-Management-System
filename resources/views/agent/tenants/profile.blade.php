@@ -23,7 +23,7 @@
         {{-- <div class="col-md-8"> --}}
             <div class="card">
                 <div class="card-header">{{ __('Profile') }}</div>
-                {{ Session::get('post_id') }}
+                {{-- {{ Session::get('post_id') }} --}}
 
                     <div class="card-body">
         <div class="col-md-4">
@@ -34,11 +34,11 @@
 
          
      @endif
-                    {{-- <div class="mt-5">
+                    <div class="mt-5">
                         <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image" class="w-25 mb-3 rounded-circle">
                         <h4 class="text-black">Elijah Moses</h4>
 
-                    </div> --}}
+                    </div>
         </div>
         <div class="col-md-8">
             <p>Name:   <b>{{ $tenant->name }}</b></p>

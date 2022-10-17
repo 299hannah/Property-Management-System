@@ -1,13 +1,17 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\post;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class AdminTenantsController extends Controller
 {
-              /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -20,7 +24,7 @@ class AdminTenantsController extends Controller
     public function index()
     {
         $tenants = Tenant::all();
-        return view('admin.tenants.index')->with('tenants',$tenants);
+        return view('admin.tenants.index')->with('tenants', $tenants);
     }
 
     public function create()
@@ -31,42 +35,29 @@ class AdminTenantsController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255' ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
-            'idno' => 'required|numeric','unique:users',
+            'idno' => 'required|numeric', 'unique:admins',
 
         ]);
 
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
-        $tenant =Tenant::create($request->all());
-        $tenant->save(); 
+        $tenant = tenant::create($request->all());
+        $tenant->save();
 
-        // $tenant->roles()->sync($request->role);
-        // $tenant ->posts()->sync($request->posts);
-        //  if (Auth::attempt(['email' => $email, 'password' => $password, 'category_id' => '2'])) {
-        //         $tenant = Auth::tenant();
-        //         Session::put('name', $tenant->name);
-        //     
+        $tenant->posts()->sync($request->posts);
+        session()->flash('success', 'Added successfully');
         return redirect('admin/tenants');
-        // return redirect(route('user.index'));
-        // return $request->all();
     }
-    //     $tenant = new Tenant;
-    //     $input = $request->all();
-    //     Tenant::create($input);
-    //     session()->flash('success', 'Added successfully');
-       
-    // }
-
     public function show($id)
     {
         $tenant = Tenant::find($id);
-        return view('admin.tenants.show')->with('tenants',$tenant);
+        return view('admin.tenants.show')->with('tenants', $tenant);
     }
 
     public function edit($id)
@@ -75,29 +66,27 @@ class AdminTenantsController extends Controller
 
         $posts = post::all();
 
-        return view('admin.tenants.edit', compact('tenant','posts'));
+        return view('admin.tenants.edit', compact('tenant', 'posts'));
     }
 
     public function update(Request $request, $id)
     {
-            $this->validate($request,[
-                'name' => ['required', 'string', 'max:50'],
-                'email' => ['required', 'string', 'email', 'max:255'],
-                // 'password' => ['required', 'string', 'min:8', 'confirmed'],
-                'phoneno' => 'required|numeric',
-                'houseno' => ['required', 'string'],
-                // 'idno' => 'required|numeric','unique:tenants',   
-    
-            ]);
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            // 'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phoneno' => 'required|numeric',
+            'houseno' => ['required', 'string'],
+            // 'idno' => 'required|numeric','unique:admins',   
 
-            $request->status? : $request['status']=0;
-            $tenant = Tenant::where('id',$id)->update($request->except('_token','_method','post'));
-            // $user->posts()->sync($request->posts);
-            Tenant::find($id)->posts()->sync($request->post);
-            // return redirect(route('user.index'))->with('message','user updated');
+        ]);
+
+        $request->status ?: $request['status'] = 0;
+        $tenant = Tenant::where('id', $id)->update($request->except('_token', '_method', 'post'));
+        // $user->posts()->sync($request->posts);
+        Tenant::find($id)->posts()->sync($request->post);
+        // return redirect(route('user.index'))->with('message','user updated');
         return redirect('admin/tenants')->with('message', 'tenant Updated!');
-
-
 
         // $tenant = Tenant::find($id);
         // $input = $request->all();
@@ -106,11 +95,10 @@ class AdminTenantsController extends Controller
 
     public function destroy($id)
     {
-             
+
         // User::where('id',$id)->delete();
         // return redirect()->back()->with('message','user deleted successfully');
-        Tenant::where('id',$id)->delete();
+        Tenant::where('id', $id)->delete();
         return redirect('admin/tenants')->with('message', 'tenant deleted!');
     }
 }
-

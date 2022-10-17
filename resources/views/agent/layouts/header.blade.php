@@ -52,7 +52,7 @@
                  <a href="" class="media-body">
                      <!-- Menu Footer-->
                      <div class=" dropdown-item">
-                         <a href="#" class="btn btn-default btn-flat">Profile</a>
+                         <a href="{{ route('agent.profile') }}" class="btn btn-default btn-flat">Profile</a>
                      </div>
                      <div class="dropdown-divider"></div>
                      <div class="dropdown-item btn btn-default pull-right">

@@ -2,13 +2,17 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\VacantRoom;
-
+use Illuminate\Support\Facades\Auth;
 
 class AgentVacantRoomController extends Controller
 {
     public function index()
     {
-        $vacantrooms = VacantRoom::all();
+
+    $vacantrooms  = VacantRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
+    // $vacantroom = VacantRoom::where('post_id',optional(Auth:giard('agent')->user())->id)get();
+
+
         return view('agent.vacantrooms.index')->with('vacantrooms', $vacantrooms);
     }
 
