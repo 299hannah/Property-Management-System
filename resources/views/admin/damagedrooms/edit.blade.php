@@ -18,10 +18,18 @@
                         <label>Description</label>
                         <input type="text" name="description" id="description" value="{{ $damagedrooms->description }}"
                             class="form-control"><br>
-                            <textarea name="description" id="description" cols="" rows="10"></textarea>
-                        {{-- <label>Description</label><br>
-                            <textarea id="description" name="description" rows="4" cols="50" value="{{ $damagedrooms->description }}" class="form-control">
-                            </textarea><br> --}}
+                        {{-- <textarea type="text" id="description" name="description" rows="4" cols="50" class="form-control" value="{{ $damagedrooms->description }}">
+                            </textarea><br>  --}}
+                        <label>Select Location</label>
+                        <div class="row">
+                            @foreach ($posts as $post)
+                                <div class="col-sm-1">
+                                    <div class="checkbox">
+                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                         <button type="submit" class="btn btn-success" id="mybutton">Update</button>
                     </form>
                 </div>

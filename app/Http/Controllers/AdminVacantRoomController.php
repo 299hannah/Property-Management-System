@@ -44,8 +44,9 @@ class AdminVacantRoomController extends Controller
 
     public function edit($id)
     {
-        $vacantroom = VacantRoom::find($id);
-        return view('admin.vacantrooms.edit')->with('vacantrooms', $vacantroom);
+        $vacantrooms = VacantRoom::find($id);
+        $posts = post::all();
+        return view('admin.vacantrooms.edit',compact('vacantrooms','posts'));
     }
 
     public function update(Request $request, $id)

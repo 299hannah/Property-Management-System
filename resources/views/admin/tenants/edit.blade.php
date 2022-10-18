@@ -56,21 +56,15 @@
                             </div>
                         </div>
                 </div>
-                <div class="form-group" data-select2-id="51">
+                {{-- <div class="form-group" data-select2-id="51"> --}}
                     <label>Select Location</label>
                     <div class="row">
                         @foreach ($posts as $post)
-                        <div class="col-lg-3">
-                            <div class="checkbox">
-                                <label ><input type="checkbox" name="post[]" value="{{ $post->id }}"
-                                    @foreach($tenant->posts as $tenant_post)
-                                        @if($tenant_post->id == $post->id)
-                                            checked
-                                        @endif
-                                    @endforeach>
-                                    {{ $post->title }}</label>
+                            <div class="col-sm-1">
+                                <div class="checkbox">
+                                    <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <div style="text-align:center;">
