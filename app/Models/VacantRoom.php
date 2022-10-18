@@ -13,4 +13,10 @@ class VacantRoom extends Model
     protected $table = 'vacantrooms';
     protected $primarykey = 'id';
     protected $fillable = ['houseno','floor','post_id'];
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+    public function profile(){
+        return $this->hasOne(Profile::class, 'vacantroom_id');
+    }
 }

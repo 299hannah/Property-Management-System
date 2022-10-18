@@ -4,15 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transactions;
+use App\Models\post;
 use Illuminate\Support\Facades\Auth;
 
 class AgentTransactionsController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('agent');
+    }
     public function index()
     {
-        $transactions = Transactions::all();
-        return view('agent.transactions.index')->with('transactions', $transactions);
-        $transactions  = Transactions::where('post_id', optional(Auth::guard('agent')->user())->id)->get();
+    $transactions  = Transactions::where('post_id', optional(Auth::guard('agent')->user())->id)->get();
+    $transaction = Transactions::where('houseno', optional(Auth::guard('agent')->user())->id)->get();
+        return view('agent.transactions.index', compact('transactions','transaction'));
+        // ->with('transactions', $transactions);
     }
 
     public function create()
@@ -22,10 +28,12 @@ class AgentTransactionsController extends Controller
 
     public function store(Request $request)
     {
+
         $input = $request->all();
         Transactions::create($input);
-        session()->flash('success', 'Added successfully');
+        session()->flash('success', 'Payment successfully');
         return redirect('agent/transactions');
+
     }
 
     public function show($id)

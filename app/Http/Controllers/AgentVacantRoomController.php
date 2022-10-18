@@ -11,8 +11,6 @@ class AgentVacantRoomController extends Controller
 
     $vacantrooms  = VacantRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
     // $vacantroom = VacantRoom::where('post_id',optional(Auth:giard('agent')->user())->id)get();
-
-
         return view('agent.vacantrooms.index')->with('vacantrooms', $vacantrooms);
     }
 

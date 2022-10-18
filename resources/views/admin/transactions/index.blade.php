@@ -32,6 +32,7 @@
                                 <th>Amount Paid</th>
                                 <th>Balance</th>
                                 <th>Date Paid</th>
+                                <th>Post Id</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -46,6 +47,7 @@
                                     <td>{{ $item->amountpaid }}</td>
                                     <td>{{ $item->balance }}</td>
                                     <td>{{ $item->datepaid }}</td>
+                                    <td>{{ $item->post_id }}</td>
                                     <td>
                                         <a href="{{ url('agent/transactions/edit/' . $item->id) }}"
                                             title="Edit transaction"><button class="btn btn-primary btn-sm"><i

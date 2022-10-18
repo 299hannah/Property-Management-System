@@ -1,7 +1,5 @@
 @extends('user.layouts.app')
 @section('bg-img3', asset('images/post/' . $post->image))
-{{-- @section('bg-img3', asset('user/images/hero_1.jpg')) --}}
-
 
 @section('main-content')
 
@@ -15,11 +13,8 @@
             </div>
         </div>
     </div>
-
     <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
 </div>
-
-
 
 <div class="site-section" id="property-details">
     <div class="site-section" id="property-details">

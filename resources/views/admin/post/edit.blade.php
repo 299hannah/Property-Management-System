@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-check pull-left">
                             <label>
-                                <input type="checkbox" name="status" value="1"
+                                <input type="checkbox" name="status" value="3"
                                     @if ($post->status == 1) {{ 'checked' }} @endif> Publish
                             </label>
                         </div>

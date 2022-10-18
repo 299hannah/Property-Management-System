@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('amountpaid');
             $table->string('balance');
             $table->string('datepaid');
+            $table->string('post_id')->default('0');
             $table->timestamps();
         });
     }

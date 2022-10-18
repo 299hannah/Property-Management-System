@@ -37,7 +37,7 @@
                         </thead>
                         <tbody>
                             @foreach ($transactions as $item)
- p        <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->houseno }}</td>
                                     <td>{{ $item->billingfor }}</td>

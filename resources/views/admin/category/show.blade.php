@@ -2,17 +2,9 @@
 @section('headsection')
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-{{--
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}"> --}}
-{{--
-<link rel="stylesheet" href="{{ asset('') }}"> --}}
-
 <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-{{-- <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script> --}}
-{{-- <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script> --}}
 <script>
   table = $('#example').DataTable( {
     "paging": true,
@@ -25,13 +17,10 @@
 @endsection
 @section('main-content')
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            {{-- @include('admin.layout.pagehead') --}}
-
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -40,13 +29,9 @@
             </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
-
-    <!-- Main content -->
     <section class="content">
-
-      <!-- Default box -->
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Title</h3><br><br>
@@ -70,7 +55,6 @@
                   <th>Slug</th>
                   <th>Edit</th>
                   <th>Delete</th>
-
                 </tr>
               </thead>
               <tbody>
@@ -103,7 +87,6 @@
 
               </tbody>
               <tfoot>
-
                 <tr>
                   <th>S.Name</th>
                   <th>Category Name</th>
@@ -114,16 +97,11 @@
               </tfoot>
             </table>
           </div>        
-        <!-- /.card-body -->
         <div class="card-footer">
           Footer
         </div>
-        <!-- /.card-footer-->
       </div>
-      <!-- /.card -->
-
     </section>
-    <!-- /.content -->
   </div>
 
 

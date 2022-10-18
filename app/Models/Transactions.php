@@ -9,5 +9,5 @@ class Transactions extends Model
 {
     protected $table = 'transactions';
     protected $primarykey = 'id';
-    protected $fillable = ['name','houseno','billingfor','expectedamount','amountpaid','balance','datepaid'];
+    protected $fillable = ['name','houseno','billingfor','expectedamount','amountpaid','balance','datepaid','room_id'];
 }

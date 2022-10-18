@@ -31,6 +31,7 @@
                                 <th>#</th>
                                 <th>House Number</th>
                                 <th>Floor</th>
+                                <th>Post Id</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -40,6 +41,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->houseno }}</td>
                                     <td>{{ $item->floor }}</td>
+                                    <td>{{ $item->post_id }}</td>
                                     <td>
                                         <a href="{{ url('admin/vacantrooms/edit/' . $item->id) }}" title="Edit vacant room"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                         <form method="POST" action="{{ url('admin/vacantrooms' . '/' . $item->id) }}"

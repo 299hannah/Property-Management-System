@@ -14,13 +14,13 @@
                             </div>
                             <div class="col">
                                 <label>Phonenumber</label><br>
-                                <input type="text" name="phoneno" id="phoneno" class="form-control"><br>
+                                <input type="text" name="phoneno" id="phoneno" class="form-control" required><br>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label" for="inputhouseno">Houseno</label><br>
-                                <input type="text" name="houseno" id="houseno" class="form-control">
+                                    <input type="text" name="houseno" id="houseno" class="form-control" required><br>                                   
                             </div>
                             <div class="col">
                                 <label>ID Number</label><br>
@@ -54,7 +54,16 @@
                                         @if (old('status') == 3) checked @endif value="3">Status</label>
                             </div>
                         </div>
-                        
+
+                        {{-- <div class="row">
+                            @foreach ($posts as $post)
+                                <div class="col-sm-1">
+                                    <div class="checkbox">
+                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div> --}}
                         <div style="text-align:center;">
                             <button type="submit" class="btn btn-success center" name="submit">Save</button>
                         </div>

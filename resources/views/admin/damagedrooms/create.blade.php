@@ -13,11 +13,17 @@
                         <input type="text" name="floor" id="floor" class="form-control"><br>
                         <label>Description</label><br>
                         <textarea id="description" name="description" rows="4" cols="50" class="form-control">
-                        {{-- <input type="text" name="description" id="description" class="form-control"><br> --}}
                         </textarea><br>
-                        {{-- <div style="text-align:center;"> --}}
+                        <div class="row">
+                                @foreach ($posts as $post)
+                                    <div class="col-sm-1">
+                                        <div class="checkbox">
+                                            <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         <button type="submit" class="btn btn-success toastrDefaultSuccess" name="submit">Save</button>
-                        {{-- </div> --}}
                     </form>
                 </div>
             </div>
