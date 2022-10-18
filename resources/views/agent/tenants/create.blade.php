@@ -20,7 +20,7 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label" for="inputhouseno">Houseno</label><br>
-                                    <input type="text" name="houseo" id="houseno" class="form-control" required><br>                                   
+                                    <input type="text" name="houseno" id="houseno" class="form-control" required><br>                                   
                             </div>
                             <div class="col">
                                 <label>ID Number</label><br>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        {{-- <div class="row">
                             @foreach ($posts as $post)
                                 <div class="col-sm-1">
                                     <div class="checkbox">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div> --}}
                         <div style="text-align:center;">
                             <button type="submit" class="btn btn-success center" name="submit">Save</button>
                         </div>

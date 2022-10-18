@@ -19,12 +19,11 @@ class AgentTenantsController extends Controller
     {
     $tenants  = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
     return view('agent.tenants.index',compact('tenants'));
-}
+    }
     public function create()
     {
         $posts = post::all();
-        return view('agent.tenants.create', compact('posts'));
-
+        return view('agent.tenants.create',compact('posts'));
     }
     public function store(Request $request)
     {   
@@ -39,17 +38,15 @@ class AgentTenantsController extends Controller
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
+        // dd($request->all());
         $tenant->save(); 
-        // $tenant ->posts()->sync($request->posts);
         session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
     public function show($id)
     {
-        // $transactions = transactions::all();
-        // $posts = post::all();
-        $tenants = Tenant::find($id);
-        return view('agent.tenants.show', compact('tenants'));
+    $tenants = Tenant::find($id);
+        return view('agent.tenants.show', compact('tenants','transactions'));
     }
     public function edit($id)
     {

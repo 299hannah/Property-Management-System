@@ -29,6 +29,8 @@
                                             <b>Email: {{ $tenants->email }}<br>
                         </div>
                     </div>
+                    <b>Phone Number: {{ $transactions->houseno }} <br>
+
 
                     {{-- <div class="row">
                         <div class="col-md-3 hh" style="float:right">
