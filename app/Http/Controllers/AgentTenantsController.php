@@ -28,8 +28,7 @@ class AgentTenantsController extends Controller
     public function create()
     {
         $posts = post::all();
-        return view('agent.tenants.create', compact('posts'));
-
+        return view('agent.tenants.create',compact('posts'));
     }
     public function store(Request $request)
     {   

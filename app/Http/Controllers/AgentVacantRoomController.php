@@ -12,10 +12,8 @@ class AgentVacantRoomController extends Controller
     }
     public function index()
     {
-
     $vacantrooms  = VacantRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
-    // $vacantroom = VacantRoom::where('post_id',optional(Auth:giard('agent')->user())->id)get();
-        return view('agent.vacantrooms.index')->with('vacantrooms', $vacantrooms);
+    return view('agent.vacantrooms.index',compact('vacantrooms'));
     }
 
     public function create()

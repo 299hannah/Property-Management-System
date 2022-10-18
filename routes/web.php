@@ -80,7 +80,7 @@ Route::get('admin/home', [App\Http\Controllers\Admin\HomeController::class, 'ind
 Route::resource('admin/tenants/', AdminTenantsController::class);
 Route::get('admin/tenants/create', [AdminTenantsController::class, 'create']);
 Route::post('admin/tenants/store', [AdminTenantsController::class, 'store']);
-Route::get('admin/tenants/edit/{}tenant_id', [AdminTenantsController::class, 'edit']);
+Route::get('admin/tenants/edit/{tenant_id}', [AdminTenantsController::class, 'edit']);
 Route::post('admin/tenants/update/{tenant_id}', [AdminTenantsController::class, 'update']);
 Route::get('admin/tenants/show/{tenant_id}', [AdminTenantsController::class, 'show']);
 
