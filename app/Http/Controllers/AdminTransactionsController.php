@@ -8,6 +8,15 @@ use App\Models\Transactions;
 
 class AdminTransactionsController extends Controller
 {
+      /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
         $transactions = Transactions::all();

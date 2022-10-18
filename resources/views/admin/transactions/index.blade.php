@@ -50,8 +50,8 @@
                                     <td>{{ $item->post_id }}</td>
                                     <td>
                                         <a href="{{ url('agent/transactions/edit/' . $item->id) }}"
-                                            title="Edit transaction"><button class="btn btn-primary btn-sm"><i
-                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            title="Edit transaction"><button class="btn btn-primary btn-sm">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -48,9 +48,9 @@
              </a>
              <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                  <a href="" class="media-body">
-                     <div class=" dropdown-item">
+                     {{-- <div class=" dropdown-item">
                          <a href="#" class="btn btn-default btn-flat">Profile</a>
-                     </div>
+                     </div> --}}
                      <div class="dropdown-divider"></div>
                      <div class="dropdown-item btn btn-default pull-right">
                          <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Logout</a>
