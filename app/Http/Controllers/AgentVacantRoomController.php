@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AgentVacantRoomController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('agent');
+    }
     public function index()
     {
 

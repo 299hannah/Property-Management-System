@@ -8,7 +8,10 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-5 mx-auto mt-lg-5 text-center">
                     <p class="mb-5"><strong class="text-white">Welcome</strong></p>
-
+                    {{-- bbbbbbbbbbbbbb
+                    @foreach ($transactions as $object)
+                    balance{{ $object->balance }}
+@endforeach --}}
                 </div>
             </div>
         </div>

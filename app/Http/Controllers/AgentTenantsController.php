@@ -46,12 +46,12 @@ class AgentTenantsController extends Controller
         $tenant =tenant::create($request->all());
         // dd($request->all());
         $tenant ->posts()->sync($request->posts);
-        $tenant ->houseno()->sync($request->houseno);
+    
 
         // $agents = Agent::where('post_id', session('post_id')); 
 
         $tenant->save(); 
-        session()->flash('success', 'Added successfully');
+         session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
     public function show($id )
