@@ -1,5 +1,3 @@
-
-
 @extends('user.app')
 @section('bg-img', asset('user/images/hero_1.jpg'))
 
@@ -13,57 +11,54 @@
 @section('sub-heading2','Its one click Away')
 @section('main-content')
 
-    <div class="site-section" id="properties-section">
-        <div class="container">
-            <div class="row large-gutters">
-                @foreach ($posts as $post)
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
-                    <div class="ftco-media-1">
-                        <div class="ftco-media-1-inner">
-                            <a href="{{ route('post', $post->slug) }}" class="d-inline-block mb-4">
-                                <img src="{{ asset('images/post/' . $post->image) }}" alt="img;" class="img-fluid">
+<div class="site-section" id="properties-section">
+    <div class="container">
+        <div class="row large-gutters">
+            @foreach ($posts as $post)
+            <div class="col-md-6 col-lg-4 mb-4 mb-lg-5 ">
+                <div class="ftco-media-1">
+                    <div class="ftco-media-1-inner">
+                        <a href="{{ route('post', $post->slug) }}" class="d-inline-block mb-4">
+                            <img src="{{ asset('images/post/' . $post->image) }}" alt="img;" class="img-fluid">
 
-                                {{-- <img src="{{ asset('user/images/property_1.jpg') }}" alt="img;" class="img-fluid"> --}}
-                            </a>
+                            {{-- <img src="{{ asset('user/images/property_1.jpg') }}" alt="img;" class="img-fluid"> --}}
+                        </a>
 
 
-                            <div class="ftco-media-details">
+                        <div class="ftco-media-details">
 
-                                <h3>{{ $post->title }}</h3>
-                                <p>{{ $post->subtitle }}</p>
-                             
-                                <strong>
-                                    $202000
-                                </strong>
-                            </div>
+                            <h3>{{ $post->title }}</h3>
+                            <p>{{ $post->subtitle }}</p>
 
+                            <strong>
+                                $202000
+                            </strong>
                         </div>
 
                     </div>
+
                 </div>
-            
+            </div>
 
-@endforeach
 
-  <!-- Divider-->
-  {{-- <hr class="my-4" /> --}}
-  <!-- Pager-->
+            @endforeach
 
+            <!-- Divider-->
+            {{-- <hr class="my-4" /> --}}
+            <!-- Pager-->
+
+        </div>
+        {{ $posts->links() }}
+
+    </div>
 </div>
-{{  $posts->links() }}
 
-</div>
-</div>
-
-
-
-
-<section class="site-section" id="agents-section">
+<section class="site-section " id="agents-section">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-7 text-left">
                 <h2 class="section-title mb-3">Real Estate Agents</h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus minima neque tempora reiciendis.</p>
+                <p class="lead">Below are our real Estate agents</p>
             </div>
         </div>
         <div class="row">
@@ -124,44 +119,6 @@
             </div>
 
 
-        </div>
-    </div>
-</section>
-
-<section class="py-5 bg-primary site-section how-it-works" id="howitworks-section">
-    <div class="container">
-        <div class="row mb-5 justify-content-center">
-            <div class="col-md-7 text-center">
-                <h2 class="section-title mb-3 text-black">How It Works</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <div class="pr-5 first-step">
-                    <span class="text-black">01.</span>
-                    <span class="custom-icon flaticon-house text-black"></span>
-                    <h3 class="text-black">Find Property.</h3>
-                    <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <div class="pr-5 second-step">
-                    <span class="text-black">02.</span>
-                    <span class="custom-icon flaticon-coin text-black"></span>
-                    <h3 class="text-dark">Buy Property.</h3>
-                    <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <div class="pr-5">
-                    <span class="text-black">03.</span>
-                    <span class="custom-icon flaticon-home text-black"></span>
-                    <h3 class="text-dark">Outstanding Houses.</h3>
-                    <p class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -244,113 +201,6 @@
     </div>
 </section>
 
-{{-- <section class="site-section testimonial-wrap" id="testimonials-section">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <h2 class="section-title mb-3">Testimonials<h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="ftco-testimonial-1">
-                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                        <img src="{{ asset('user/images/person_1.jpg') }}" alt="img;" class="img-fluid mr-3">
-                        <div>
-                            <h3>Allison Holmes</h3>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="ftco-testimonial-1">
-                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                        <img src="{{ asset('user/images/person_2.jpg') }}" alt="img;" class="img-fluid mr-3">
-                        <div>
-                            <h3>James Phelps</h3>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-                <div class="ftco-testimonial-1">
-                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                        <img src="{{ asset('user/images/person_3.jpg') }}" alt="img;" class="img-fluid mr-3">
-                        <div>
-                            <h3>Nestor Helsin</h3>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="ftco-testimonial-1">
-                    <div class="ftco-testimonial-vcard d-flex align-items-center mb-4">
-                        <img src="{{ asset('user/images/person_1.jpg') }}" alt="img;" class="img-fluid mr-3">
-                        <div>
-                            <h3>Allison Holmes</h3>
-                            <span>Customer</span>
-                        </div>
-                    </div>
-                    <div>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, mollitia. Possimus mollitia nobis libero quidem aut tempore dolore iure maiores, perferendis, provident numquam illum nisi amet necessitatibus. A, provident aperiam!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
-
-{{-- <section class="site-section" id="news-section">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-12 text-center">
-                <h2 class="section-title mb-3">News &amp; Events</h2>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                <div class="h-entry">
-                    <a href="single.html"><img src="{{ asset('user/images/img_1.jpg') }}" alt="img;" class="img-fluid"></a>
-                    <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
-                    <div class="meta mb-4">Allison Holmes <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                <div class="h-entry">
-                    <a href="single.html"><img src="{{ asset('user/images/img_2.jpg') }}" alt="img;" class="img-fluid"></a>
-                    <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
-                    <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-                <div class="h-entry">
-                    <a href="single.html"><img src="{{ asset('user/images/img_3.jpg') }}" alt="img;" class="img-fluid"></a>
-                    <h2 class="font-size-regular"><a href="single.html" class="text-dark">Popular Real Estate Properties for 2019</a></h2>
-                    <div class="meta mb-4">Allison Holmes <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="single.html">News</a></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section> --}}
-
 
 
 
@@ -420,7 +270,7 @@
                     <p class="mb-4">203 Nairobi, Kenya</p>
 
                     <p class="mb-0 font-weight-bold">Phone</p>
-                    <p class="mb-4"><a href="#">+254  73235 3024</a></p>
+                    <p class="mb-4"><a href="#">+254 73235 3024</a></p>
 
                     <p class="mb-0 font-weight-bold">Email Address</p>
                     <p class="mb-0"><a href="#">pesafy@gmail.com</a></p>

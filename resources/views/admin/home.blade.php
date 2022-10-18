@@ -31,7 +31,7 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>15</h3>
+                                <h3>{{ $tenants }}</h3>
                                 <p>Tenants</p>
                             </div>
                             <div class="icon">
@@ -43,19 +43,19 @@
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>13<sup style="font-size: 20px"></sup></h3>
+                                <h3>{{ $agents }}<sup style="font-size: 20px"></sup></h3>
                                 <p>Agents</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{ url('admin/agent') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6">
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3>{{ $posts }}</h3>
                                 <p>Properties</p>
                             </div>
                             <div class="icon">

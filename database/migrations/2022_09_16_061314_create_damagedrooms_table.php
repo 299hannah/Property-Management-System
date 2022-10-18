@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('houseno');
             $table->string('floor');
+            $table->string('post_id')->default('0');
             $table->string('description');
             $table->timestamps();
         });

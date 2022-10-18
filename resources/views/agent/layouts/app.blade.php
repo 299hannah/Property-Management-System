@@ -21,7 +21,7 @@
                 closeButton: true,
                 progressBar: true,
                 showMethod: 'slideDown',
-                timeOut: 5000
+                timeOut: 2000
             };
             @if (!is_null(Session::get('success')))
                 toastr.success('{!! Session::get('success') !!}',

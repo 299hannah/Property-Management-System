@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Authenticatable;
 use App\Models\Admin;
+use App\Models\Tenant;
+use App\Models\Agent;
+use App\Models\post;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -22,19 +25,11 @@ class AdminController extends Controller
 
     public function Dashboard()
     {
-        return view('admin.home');
+        $tenants = Tenant::count();
+        $agents = Agent::count();
+        $posts = post::count();
+        return view('admin.home', compact('tenants','agents','posts'));
     }
-
-    // public function Login(Request $request)
-    // {
-    //     $check = $request->all();
-    //     if (Auth::guard('admin')->attempt(['email' => $check['email'], 'password' => $check['password']])) {
-    //         return redirect()->route('admin.dashboard')->with('success', 'Admin Logged in Successfully');
-    //     } else {
-    //         return back()>with('error', 'invalid credentials');
-    //     }
-    // }
-
     public function AdminLogout()
     {
         Auth::guard('admin')->logout();

@@ -94,11 +94,8 @@
                                     @endforeach>
                                     {{ $post->title }}</label>
                             </div>
-
                         </div>
-
                         @endforeach
-
                     </div>
                     <div style="text-align:center;">
                         <button type="submit" class="btn btn-success" id="mybutton">Update</button>

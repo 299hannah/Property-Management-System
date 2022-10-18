@@ -50,7 +50,7 @@ class LocationController extends Controller
          $category ->name =$request->name;
          $category ->slug =$request->slug;
          $category->save();
- 
+         session()->flash('success', 'Added successfully');
          return redirect(route('category.index'));
  
     }

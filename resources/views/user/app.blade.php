@@ -9,10 +9,6 @@
 <div class="site-wrap">
 
     @include('user.layouts.landing')
-
-
-
- 
         @section('main-content')
              @show 
             </div>          

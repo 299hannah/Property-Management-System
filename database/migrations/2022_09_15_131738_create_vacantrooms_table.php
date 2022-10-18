@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('vacantrooms', function (Blueprint $table) {
             $table->id();
             $table->string('houseno')->unique();
+            $table->string('post_id')->default('0');
             $table->string('floor');
             $table->timestamps();
         });

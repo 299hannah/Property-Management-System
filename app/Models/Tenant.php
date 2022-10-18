@@ -27,4 +27,9 @@ class Tenant extends Authenticatable
         return $this->hasOne(Profile::class, 'tenant_id');
     }
 
+    public function rooms()
+    {
+        return $this->belongsToMany('App\Models\rooms','rooms')->withTimestamps();
+    }
+
 }

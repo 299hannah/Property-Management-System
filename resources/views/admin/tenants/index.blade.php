@@ -1,19 +1,19 @@
 @extends('admin.layouts.app')
 @section('headsection')
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-<script>
-  table = $('#example').DataTable( {
-    "paging": true,
-      "ordering": true,
-    "responsive": true,
-       "lengthChange": false, 
-       "autoWidth": false
-} );
-</script>
+    <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script>
+        table = $('#example').DataTable({
+            "paging": true,
+            "ordering": true,
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false
+        });
+    </script>
 @endsection
 @section('main-content')
         <div class="content-wrapper">
@@ -37,6 +37,8 @@
                         <th>ID Number</th>
                         <th>Status</th>
                         <th>Email</th>
+
+                        <th>Post Id</th>
                         {{-- <th>Password</th> --}}
                         <th>Action</th>
                     </tr>
@@ -50,11 +52,10 @@
                         <td>{{ $item->houseno }}</td>
                         <td>{{ $item->idno }}</td>
                         <td>
-                    
                           {{ $item->status? 'active':'inactive' }}
                        </td>
                         <td>{{ $item->email }}</td>
-                        {{-- <td>{{ $item->password }}</td> --}}
+                        <td>{{ $item->post_id }}</td>
                         <td>
                             <a href="{{ url('admin/tenants/show/' . $item->id )}}" title="View tenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                             <a href="{{ url('admin/tenants/edit/' . $item->id )}}" title="Edit tenant"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
