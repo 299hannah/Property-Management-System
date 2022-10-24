@@ -19,8 +19,14 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Bills') }}</div>
-                    {{-- {{ Session::get('post_id') }} --}}
+                    <table>
+                        <th>House Number</th>
+                        <th>Billing For</th>
+                        <th>Date Paid</th>
+                        <th>Expected Amount</th>
+                        <th>Amount Paid</th>
+                        <th>Balance</th>
+                    </table>
                     <div class="card-body">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
                             Make Payment
@@ -29,10 +35,6 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title">Make Payment</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
                                     </div>
                                     <div class="modal-body">
                                         <section class="content-header">
@@ -105,10 +107,10 @@
                                             </div>
                                         </section>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
+                        <div></div>
                         <div class="mt-5">
                             <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image"
                                 class="w-25 mb-3 rounded-circle">

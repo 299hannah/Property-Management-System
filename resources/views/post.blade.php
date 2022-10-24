@@ -1,5 +1,7 @@
 @extends('user.layouts.app')
 @section('bg-img3', asset('images/post/' . $post->image))
+{{-- @section('bg-img3', asset('user/images/hero_1.jpg')) --}}
+
 
 @section('main-content')
 
@@ -13,8 +15,11 @@
             </div>
         </div>
     </div>
+
     <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
 </div>
+
+
 
 <div class="site-section" id="property-details">
     <div class="container">
@@ -37,20 +42,27 @@
             </div>
 
             <div class="mb-5">
+
                 <div class="mt-5">
                     <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image" class="w-25 mb-3 rounded-circle">
                     <h4 class="text-black">Elijah Moses</h4>
+                    <p><a href="#" class="btn btn-primary btn-sm">Contact Agent</a></p>
+                    
                     @foreach ( $post->categories as $category )
                     <small class="pull-right badge" style="margin-right: 5px; border-radius:5px; border: 1px solid gray;">
                         <a href="{{ route('category',$category->slug) }}">{{ $category->name }}</a>
                     </small>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, iure atque sit ratione vitae neque! Laborum voluptate eius, laboriosam explicabo!</p>
                     <p><a href="#" class="btn btn-primary btn-sm">Contact Agent</a></p>
+
                     @endforeach
+                 
+
+
                 </div>
             </div>
         </div>
         <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
     </div>
+   
 @endsection
-

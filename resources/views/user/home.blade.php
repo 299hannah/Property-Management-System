@@ -18,10 +18,7 @@
                                 </a>
                                 <div class="ftco-media-details">
                                     <h3>{{ $post->title }}</h3>
-                                    <p>{{ $post->subtitle }}</p>
-                                    <strong>
-                                        $202000
-                                    </strong>
+                                    <p>{{ $post->subtitle }}</p>                                   
                                 </div>
                             </div>
                         </div>
