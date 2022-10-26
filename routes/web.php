@@ -128,12 +128,14 @@ Route::post('agent/transactions/store', [AgentTransactionsController::class, 'st
 Route::get('agent/transactions/edit/{transaction_id}', [AgentTransactionsController::class, 'edit']);
 Route::post('agent/transactions/update/{transaction_id}', [AgentTransactionsController::class, 'update']);
 Route::post('agent/transactions/{transaction_id}', [AgentTransactionsController::class, 'destroy']);
+// Route::get('admin/transactions/{transaction_id}', [AdminTransactionsController::class, 'transact']);
 
-// Route::get('tenants/', [TenantController::class, 'index']);
 
-Route::get('tenant/index', [TenantsController::class, 'index']);
-// Route::get('transactions/', [TenantsController::class, 'create']);
+// Route::get('tenant/index', [TenantsController::class, 'index']);
 Route::post('transactions/store', [TenantsController::class, 'store']);
+Route::post('home', [TenantsController::class, 'transact']);
+// Route::get('transactions/', [TenantsController::class, 'create']);`
+
 
 
 

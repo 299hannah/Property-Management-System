@@ -1,32 +1,20 @@
 @extends('user.layouts.app')
 @section('bg-img3', asset('user/images/reg.jpg'))
-
 @section('main-content')
-
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(@yield('bg-img3')" data-aos="fade">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-5 mx-auto mt-lg-5 text-center">
                     <p class="mb-5"><strong class="text-white">Welcome</strong></p>
-
                 </div>
             </div>
         </div>
-
         <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
     </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <table>
-                        <th>House Number</th>
-                        <th>Billing For</th>
-                        <th>Date Paid</th>
-                        <th>Expected Amount</th>
-                        <th>Amount Paid</th>
-                        <th>Balance</th>
-                    </table>
                     <div class="card-body">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
                             Make Payment
@@ -110,14 +98,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div></div>
-                        <div class="mt-5">
-                            <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image"
-                                class="w-25 mb-3 rounded-circle">
-                            <h5 class="text-black">Elijah Moses</h5>
-                        </div>
+                    <div>
+                </div>
+                    </div>
+                    <table id="example" class="table table-bordered table-stripped">
+                        <thead>
+                            <tr>
+                                {{-- <th>Name</th> --}}
+                                {{-- <th>House Number</th> --}}
+                                <th>Billing For</th>
+                                <th>Date Paid</th>
+                                <th>Expected Amount</th>
+                                <th>Amount Paid</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                   <tbody>
+                    @php
+                        $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+                    @endphp
+                       @foreach ($transactions as $item )
+                          <tr>
+                       
+                               {{-- <td>{{ $item->name }}</td> --}}
+                               {{-- <td>{{ $item->houseno }}</td> --}}
+                               <td>{{ $item->billingfor }}</td>
+                               <td>{{ $item->datepaid }}</td>
+                               <td>{{ $item->expectedamount }}</td>
+                               <td>{{ $item->amountpaid }}</td>
+                               <td>{{ $item->balance }}</td>
+                         </tr>
+                    @endforeach
+                   </tbody> 
+                    </table>
+                    <div class="mt-5">
+                        <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image"
+                            class="w-25 mb-3 rounded-circle">
+                        <h5 class="text-black">Elijah Moses</h5>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+@endsection

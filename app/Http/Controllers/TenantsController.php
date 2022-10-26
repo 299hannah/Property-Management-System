@@ -25,6 +25,13 @@ class TenantsController extends Controller
     {
         return view('transactions');
     }
+    
+    public function transact()
+    {
+        $transactions = Transactions::all();
+        return view('home', compact('transactions'));
+
+    }
 
     public function store(Request $request)
     {

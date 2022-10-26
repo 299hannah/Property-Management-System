@@ -7,7 +7,6 @@
                 <div class="card-body">
                     <form action="{{ url('admin/damagedrooms/update/' . $damagedrooms->id) }}" method="post">
                         {!! csrf_field() !!}
-                        {{-- @method('PATCH') --}}
                         <input type="hidden" name="id" id="id" value="{{ $damagedrooms->id }}" id="id">
                         <label>House Number</label>
                         <input type="text" name="houseno" id="houseno" value="{{ $damagedrooms->houseno }}"
@@ -18,8 +17,6 @@
                         <label>Description</label>
                         <input type="text" name="description" id="description" value="{{ $damagedrooms->description }}"
                             class="form-control"><br>
-                        {{-- <textarea type="text" id="description" name="description" rows="4" cols="50" class="form-control" value="{{ $damagedrooms->description }}">
-                            </textarea><br>  --}}
                         <label>Select Location</label>
                         <div class="row">
                             @foreach ($posts as $post)
@@ -29,7 +26,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                        </div>
+                        </div><br>
                         <button type="submit" class="btn btn-success" id="mybutton">Update</button>
                     </form>
                 </div>

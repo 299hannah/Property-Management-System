@@ -35,7 +35,6 @@
                         </div>
                         <div class="form-group">
                             <label for="">Status</label>
-
                         <div class="checkbox">
                             <label ><input type="checkbox" name="status" @if (old('status') == 1 || $agent->status ==1)
                                checked 

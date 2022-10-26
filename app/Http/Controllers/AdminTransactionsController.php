@@ -18,7 +18,6 @@ class AdminTransactionsController extends Controller
         $transaction = Transactions::find($id);
         return view('admin.transactions.show')->with('transactions',$transaction);
     }
-
     public function edit($id)
     {
         $transaction = Transactions::find($id);

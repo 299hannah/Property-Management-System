@@ -18,6 +18,9 @@ class AgentTransactionsController extends Controller
         $transactions = Transactions::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
         return view('agent.transactions.index',compact('transactions')); 
     }
+
+    // public function
+
     public function create()
     {   
         return view('agent.transactions.create');
@@ -26,8 +29,9 @@ class AgentTransactionsController extends Controller
     {
         $input = $request->all();
         Transactions::create($input);
-        session()->flash('success', 'Payment successfully');
-        return redirect('agent/transactions');
+        dd($request->all());
+        // session()->flash('success', 'Payment successfully');
+        // return redirect('agent/transactions');
     }
     public function show($id)
     {

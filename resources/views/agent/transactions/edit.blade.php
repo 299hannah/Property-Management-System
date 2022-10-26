@@ -36,21 +36,21 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label">Billing For</label><br>
-                                <select class="form-control" type="billingfor" name="billingfor">
-                                    <option value="">Select Month</option>
-                                    <option name="religion1">January</option>
-                                    <option name="religion2">February</option>
-                                    <option name="religion3">March</option>
-                                    <option name="religion3">April</option>
-                                    <option name="religion3">May</option>
-                                    <option name="religion3">June</option>
-                                    <option name="religion3">July</option>
-                                    <option name="religion3">August</option>
-                                    <option name="religion3">September</option>
-                                    <option name="religion3">October</option>
-                                    <option name="religion3">November</option>
-                                    <option name="religion3">December</option>
-                                </select>
+                                <label class="form-label" for="inputbillingfor" name="billingfor">Billing For</label><br>
+                                <?php
+                                $dbselected = $row['billingfor'];
+                                $options = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+                                echo "<select name='billingfor' class='form-select'>";
+                                    foreach ($options as $option ){
+                                        if ($dbselected == $option){
+                                            echo"<option selected='selected' value='$option'>$option</option>";
+                                        }   
+                                        else {
+                                            echo "<option name='billingfor' value='$option'>$option</option>";
+                                        }
+                                    }
+                                    echo "</select>"
+                                 ?>
                             </div>
                             <div class="col">
                                 <label>Balance</label><br>

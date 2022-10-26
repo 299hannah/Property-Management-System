@@ -12,6 +12,7 @@
                         <input type="text" name="houseno" id="houseno" class="form-control"><br>
                         <label>Floor</label><br>
                         <input type="text" name="floor" id="floor" class="form-control"><br>
+                        <label>Select Property</label>
                         <div class="row">
                             @foreach ($posts as $post)
                                 <div class="col-sm-1">
