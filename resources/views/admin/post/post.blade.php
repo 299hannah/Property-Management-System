@@ -21,12 +21,12 @@
                         <div class="col">
                             <label>Property Title</label><br>
                             <input type="text" name="title" id="title" class="form-control"
-                                placeholder="title"><br>
+                                placeholder="Title"><br>
                         </div>
                         <div class="col">
                             <label>Property Sub Title</label><br>
                             <input type="text" name="subtitle" id="subtitle" class="form-control"
-                                placeholder="Write your subtitle"><br>
+                                placeholder="Subtitle"><br>
                         </div>
                     </div>
                     <div class="row mb-3">

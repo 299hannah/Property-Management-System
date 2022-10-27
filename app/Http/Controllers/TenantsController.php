@@ -10,16 +10,16 @@ use Illuminate\Support\Facades\Auth;
 
 class TenantsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('agent');
+    }
     public function index()
     {
-        $transactions = Transactions::all();
+        $transactions = Transactions::where('post_id', optional(Auth::user())->id)->get();
+        // $transactions = Transactions::all();
         return view('tenant.index')->with('transactions', $transactions);
-
-        $transactions  = Transactions::where('post_id', optional(Auth::user())->id)->get();
-        // $tenants = Tenant::find('post_id',optional(Auth::user())->id)->get(); 
-
     }
-
     public function create()
     
     {
@@ -37,6 +37,7 @@ class TenantsController extends Controller
     {
         $input = $request->all();
         Transactions::create($input);
+
         session()->flash('success', 'Payment successfull');
         return redirect('home');
     }

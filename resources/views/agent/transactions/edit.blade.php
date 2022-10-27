@@ -35,22 +35,9 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label class="form-label">Billing For</label><br>
                                 <label class="form-label" for="inputbillingfor" name="billingfor">Billing For</label><br>
-                                <?php
-                                $dbselected = $row['billingfor'];
-                                $options = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-                                echo "<select name='billingfor' class='form-select'>";
-                                    foreach ($options as $option ){
-                                        if ($dbselected == $option){
-                                            echo"<option selected='selected' value='$option'>$option</option>";
-                                        }   
-                                        else {
-                                            echo "<option name='billingfor' value='$option'>$option</option>";
-                                        }
-                                    }
-                                    echo "</select>"
-                                 ?>
+                               <select name="" id="billingfor"></select>
+                                 
                             </div>
                             <div class="col">
                                 <label>Balance</label><br>

@@ -14,24 +14,24 @@
                             </div>
                             <div class="col">
                                 <label>Phonenumber</label><br>
-                                <input type="text" name="phoneno" id="phoneno" class="form-control"><br>
+                                <input type="text" name="phoneno" id="phoneno" class="form-control" placeholder="phoneno"><br>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label" for="inputhouseno">Houseno</label><br>
-                                <input type="text" name="houseno" id="houseno" class="form-control">
+                                <input type="text" name="houseno" id="houseno" class="form-control" placeholder="houseno">
                             </div>
                             <div class="col">
                                 <label>ID Number</label><br>
-                                <input type="text" name="idno" id="idno" class="form-control" required><br>
+                                <input type="text" name="idno" id="idno" class="form-control" placeholder="idno" required><br>
                             </div>
                         </div>
                         <div class="row mb-3 ">
                             <div class="col">
                                 <div class="form-group"> 
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email"  placeholder="email" value="{{ old('email') }} ">
+                                    <input type="text" class="form-control" name="email" id="email"  placeholder="email">
                                 </div>
                             </div>
                             <div class="col">

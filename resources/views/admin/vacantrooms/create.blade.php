@@ -9,9 +9,9 @@
                     <form action="{{ url('admin/vacantrooms/store') }}" method="post">
                         {!! csrf_field() !!}
                         <label>House Number</label><br>
-                        <input type="text" name="houseno" id="houseno" class="form-control"><br>
+                        <input type="text" name="houseno" id="houseno" class="form-control" placeholder="houseno"><br>
                         <label>Floor</label><br>
-                        <input type="text" name="floor" id="floor" class="form-control"><br>
+                        <input type="text" name="floor" id="floor" class="form-control" placeholder="floor"><br>
                         <label>Select Property</label>
                         <div class="row">
                             @foreach ($posts as $post)

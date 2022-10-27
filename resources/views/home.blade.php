@@ -104,8 +104,6 @@
                     <table id="example" class="table table-bordered table-stripped">
                         <thead>
                             <tr>
-                                {{-- <th>Name</th> --}}
-                                {{-- <th>House Number</th> --}}
                                 <th>Billing For</th>
                                 <th>Date Paid</th>
                                 <th>Expected Amount</th>
@@ -114,14 +112,11 @@
                             </tr>
                         </thead>
                    <tbody>
-                    @php
+                    {{-- @php
                         $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
-                    @endphp
+                    @endphp --}}
                        @foreach ($transactions as $item )
                           <tr>
-                       
-                               {{-- <td>{{ $item->name }}</td> --}}
-                               {{-- <td>{{ $item->houseno }}</td> --}}
                                <td>{{ $item->billingfor }}</td>
                                <td>{{ $item->datepaid }}</td>
                                <td>{{ $item->expectedamount }}</td>
@@ -134,7 +129,7 @@
                     <div class="mt-5">
                         <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image"
                             class="w-25 mb-3 rounded-circle">
-                        <h5 class="text-black">Elijah Moses</h5>
+                        <h5 class="text-black">{{ $item->name }}</h5>
                     </div>
                 </div>
             </div>

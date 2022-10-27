@@ -29,9 +29,9 @@ class AgentTransactionsController extends Controller
     {
         $input = $request->all();
         Transactions::create($input);
-        dd($request->all());
-        // session()->flash('success', 'Payment successfully');
-        // return redirect('agent/transactions');
+        // dd($request->all());
+        session()->flash('success', 'Payment successfully');
+        return redirect('agent/transactions');
     }
     public function show($id)
     {
@@ -41,7 +41,8 @@ class AgentTransactionsController extends Controller
     public function edit($id)
     {
         $transaction = Transactions::find($id);
-        return view('agent.transactions.edit')->with('transactions', $transaction);
+        $months = Transactions::pluck('January','February','March','April','May','June','July','August','September','October','November','December');
+        return view('agent.transactions.edit', compact('transaction','months'));
     }
     public function update(Request $request, $id)
     {
