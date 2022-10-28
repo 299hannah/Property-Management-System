@@ -9,10 +9,8 @@
 
         @section('main-content')
              @show      
-        @include('agent.layouts.footer')
 
     </div>
-
 
     <script>
         //toastr notifications
@@ -43,7 +41,9 @@
         }, 800);
     </script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </body>
+@include('agent.layouts.footer')
+
 </html>
 

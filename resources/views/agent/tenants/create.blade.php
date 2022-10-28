@@ -54,7 +54,6 @@
                                         @if (old('status') == 3) checked @endif value="3">Status</label>
                             </div>
                         </div>
-
                         {{-- <div class="row">
                             @foreach ($posts as $post)
                                 <div class="col-sm-1">

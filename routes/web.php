@@ -60,7 +60,13 @@ Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function
     Route::get('/logout','AgentController@AgentLogout')->name('agent.logout')->middleware('agent');
     Route::get('/register','AgentController@AgentRegister')->name('agent.register');
     Route::post('/register/create','AgentController@AgentRegisterCreate')->name('agent.register.create');
-    Route::get('/profile', [ProfileController::class, 'index'])->name('agent.profile');
+    // Route::get('/profile', 'ProfileController@index')->name('agent.profile');
+    // Route::get('/editprofile/{id}', 'ProfController@update');
+    Route::get('/profile/profile', 'ProfController@index')->name('profile.index');
+    Route::get('/profile/editprofile', 'EditProfileController@update')->name('profile.update');
+
+
+
 
     Route::get('/rooms', 'RoomsController@index');
     Route::get('/rooms/create', 'RoomsController@create');

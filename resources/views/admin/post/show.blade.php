@@ -63,7 +63,7 @@
                 <div class="card-body">
                     <table id="example" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
+                            <tr class="even">
                                 <th>S.Name</th>
                                 <th>Title</th>
                                 <th>sub-title</th>
@@ -76,7 +76,7 @@
                         </thead>
                         <tbody>
                             @foreach ($posts as $post)
-                                <tr>
+                                <tr class="even">
                                     <td>{{ $loop->index + 1 }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->subtitle }}</td>
@@ -114,7 +114,7 @@
                         </tbody>
                         <tfoot>
 
-                            <tr>
+                            <tr class="odd">
                                 <th>S.Name</th>
                                 <th>Title</th>
                                 <th>sub-title</th>

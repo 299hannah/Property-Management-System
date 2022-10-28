@@ -8,7 +8,7 @@ use App\Models\post;
 use App\Models\Transactions;
 use Illuminate\Support\Facades\Auth;
 
-
+ 
 
 class AdminTenantsController extends Controller
 {

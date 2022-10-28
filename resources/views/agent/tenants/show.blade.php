@@ -42,7 +42,7 @@
                     </div> --}}
                     <table class="table " id="example1">
                         <thead>
-                            <tr class="tt">
+                            <tr class="odd">
                                 <th>ID</th>
                                 <th>Billing For</th>
                                 <th>Expected Amount</th>
@@ -52,7 +52,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="even">
                                 <td></td>
                                 <td>October</td>
                                 <td>45000</td>
