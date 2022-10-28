@@ -12,11 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminTenantsController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('admin');
@@ -43,15 +38,12 @@ class AdminTenantsController extends Controller
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
             'idno' => 'required|numeric', 'unique:admins',
-
         ]);
-
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant = tenant::create($request->all());
         $tenant->save();
 
-        // $tenant->posts()->sync($request->posts);
         session()->flash('success', 'Added successfully');
         return redirect('admin/tenants');
     }
@@ -90,7 +82,6 @@ class AdminTenantsController extends Controller
 
     public function destroy($id)
     {
-
         Tenant::where('id', $id)->delete();
         return redirect('admin/tenants')->with('message', 'tenant deleted!');
     }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @include('admin.layouts.head')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+{{-- <body class="hold-transition sidebar-mini layout-fixed"> --}}
     <div class="wrapper">
         @include('admin.layouts.header')
 
@@ -46,6 +46,6 @@
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
-</body>
+{{-- </body> --}}
 </html>
 

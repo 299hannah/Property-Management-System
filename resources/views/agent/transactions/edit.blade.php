@@ -35,22 +35,9 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label class="form-label">Billing For</label><br>
-                                <select class="form-control" type="billingfor" name="billingfor">
-                                    <option value="">Select Month</option>
-                                    <option name="religion1">January</option>
-                                    <option name="religion2">February</option>
-                                    <option name="religion3">March</option>
-                                    <option name="religion3">April</option>
-                                    <option name="religion3">May</option>
-                                    <option name="religion3">June</option>
-                                    <option name="religion3">July</option>
-                                    <option name="religion3">August</option>
-                                    <option name="religion3">September</option>
-                                    <option name="religion3">October</option>
-                                    <option name="religion3">November</option>
-                                    <option name="religion3">December</option>
-                                </select>
+                                <label class="form-label" for="inputbillingfor" name="billingfor">Billing For</label><br>
+                               <select name="" id="billingfor"></select>
+                                 
                             </div>
                             <div class="col">
                                 <label>Balance</label><br>
