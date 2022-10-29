@@ -14,40 +14,36 @@ class AgentTransactionsController extends Controller
       $this->middleware('agent');
     }
     public function index()
-    {
-    $transactions  = Transactions::where('post_id', optional(Auth::guard('agent')->user())->id)->get();
-    $transaction = Transactions::where('houseno', optional(Auth::guard('agent')->user())->id)->get();
-        return view('agent.transactions.index', compact('transactions','transaction'));
-        // ->with('transactions', $transactions);
+    {  
+        $transactions = Transactions::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
+        return view('agent.transactions.index',compact('transactions')); 
     }
+
+    // public function
 
     public function create()
-    {
+    {   
         return view('agent.transactions.create');
     }
-
     public function store(Request $request)
     {
-
         $input = $request->all();
         Transactions::create($input);
+        // dd($request->all());
         session()->flash('success', 'Payment successfully');
         return redirect('agent/transactions');
-
     }
-
     public function show($id)
     {
         $transaction = Transactions::find($id);
         return view('agent.transactions.show')->with('transactions', $transaction);
     }
-
     public function edit($id)
     {
         $transaction = Transactions::find($id);
-        return view('agent.transactions.edit')->with('transactions', $transaction);
+        $months = Transactions::pluck('January','February','March','April','May','June','July','August','September','October','November','December');
+        return view('agent.transactions.edit', compact('transaction','months'));
     }
-
     public function update(Request $request, $id)
     {
         $transaction = Transactions::find($id);
@@ -55,7 +51,6 @@ class AgentTransactionsController extends Controller
         $transaction->update($input);
         return redirect('agent/transactions')->with('flash message', 'transaction Updated!');
     }
-
     public function destroy($id)
     {
         Transactions::destroy($id);

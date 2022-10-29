@@ -24,12 +24,12 @@
 
             <div class="form-group">
               <label for="name">Location title</label>
-              <input type="text" class="form-control" name="name" id="name" placeholder="Write your Location Title">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Location Title">
             </div>
          
             <div class="form-group">
               <label for="slug">Location Slug</label>
-              <input type="text" class="form-control" name="slug" id="slug" placeholder="Write your slug">
+              <input type="text" class="form-control" name="slug" id="slug" placeholder="Slug">
             </div>
 
           </div>

@@ -14,24 +14,24 @@
                             </div>
                             <div class="col">
                                 <label>Phonenumber</label><br>
-                                <input type="text" name="phoneno" id="phoneno" class="form-control"><br>
+                                <input type="text" name="phoneno" id="phoneno" class="form-control" placeholder="phoneno"><br>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col">
                                 <label class="form-label" for="inputhouseno">Houseno</label><br>
-                                <input type="text" name="houseno" id="houseno" class="form-control">
+                                <input type="text" name="houseno" id="houseno" class="form-control" placeholder="houseno">
                             </div>
                             <div class="col">
                                 <label>ID Number</label><br>
-                                <input type="text" name="idno" id="idno" class="form-control" required><br>
+                                <input type="text" name="idno" id="idno" class="form-control" placeholder="idno" required><br>
                             </div>
                         </div>
                         <div class="row mb-3 ">
                             <div class="col">
                                 <div class="form-group"> 
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email"  placeholder="email" value="{{ old('email') }} ">
+                                    <input type="text" class="form-control" name="email" id="email"  placeholder="email">
                                 </div>
                             </div>
                             <div class="col">
@@ -56,25 +56,16 @@
                             <div class="checkbox">
                                 <label><input type="checkbox" name="status" @if (old('status') == 3) checked @endif value="3">Status</label>
                             </div>
+                                <label for="">Select Property</label>
                             <div class="row">
-                                @foreach ($posts as $post )
-
-                                <div class="col-md-3">
-                                    <div class="checkbox">
-                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
-                                    </div>
-
-                                </div>
-
-                                @endforeach
-                               {{-- @foreach ($posts as $post )
-
-                                <div class="col-sm-1">
-                                    <div class="checkbox">
-                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                @foreach ($posts as $post)
+                                    <div class="col-lg-3">
+                                        <div class="checkbox">
+                                            <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                        </div>
                                     </div>
                                 @endforeach
-                       --}}
+                       
                             </div>
                             <div class="card-footer text-center form-group col-lg-12">
                                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>

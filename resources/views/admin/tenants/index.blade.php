@@ -32,14 +32,9 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Phone Number</th>
                         <th>House Number</th>
-                        <th>ID Number</th>
                         <th>Status</th>
-                        <th>Email</th>
-
                         <th>Post Id</th>
-                        {{-- <th>Password</th> --}}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -48,13 +43,10 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
-                        <td>{{ $item->phoneno }}</td>
                         <td>{{ $item->houseno }}</td>
-                        <td>{{ $item->idno }}</td>
                         <td>
                           {{ $item->status? 'active':'inactive' }}
                        </td>
-                        <td>{{ $item->email }}</td>
                         <td>{{ $item->post_id }}</td>
                         <td>
                             <a href="{{ url('admin/tenants/show/' . $item->id )}}" title="View tenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>

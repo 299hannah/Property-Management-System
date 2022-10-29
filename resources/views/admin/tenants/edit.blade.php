@@ -56,45 +56,15 @@
                             </div>
                         </div>
                 </div>
-                <div class="form-group" data-select2-id="51">
-                    <label>Select property</label>
-                    {{-- <select class="select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" --}}
-                      {{-- style="width: 100%;" data-select2-id="7" tabindex="-1" aria-hidden="true" name="posts[]"> --}}
-{{--           
-                      @foreach ($posts as $post )
-                      <option value="{{ $post->id }}"
-                        @foreach ($tenant->posts as $tenantpost )
-      
-                        @if ($tenantpost->id == $post->id)
-                            selected
-                          
-                        @endif
-                          
-                        @endforeach
-                        
-                        >{{ $post->name }}</option>
-                      @endforeach --}}
-                      {{-- @foreach ($posts as $cateitem)
-                      <option value="{{ $cateitem->id }}"
-                          {{ $tenant->post_id == $cateitem->id ? 'selected' : '' }}>
-                          {{ $cateitem->name }}</option>
-                  @endforeach --}}
-                    {{-- </select> --}}
-
+                {{-- <div class="form-group" data-select2-id="51"> --}}
+                    <label>Select Location</label>
                     <div class="row">
                         @foreach ($posts as $post)
-                        <div class="col-lg-3">
-                            <div class="checkbox">
-                                <label ><input type="checkbox" name="post_id" value="{{ $post->id }}"
-                                    
-                                    @foreach($tenant->posts as $tenant_post)
-                                        @if($tenant_post->id == $post->id)
-                                            checked
-                                        @endif
-                                    @endforeach>
-                                    {{ $post->title }}</label>
+                            <div class="col-sm-1">
+                                <div class="checkbox">
+                                    <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <div style="text-align:center;">

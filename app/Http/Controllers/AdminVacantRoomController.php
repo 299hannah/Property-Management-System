@@ -8,8 +8,18 @@ use App\Models\VacantRoom;
 
 class AdminVacantRoomController extends Controller
 {
+         /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
+
         $vacantrooms = VacantRoom::all();
         return view('admin.vacantrooms.index')->with('vacantrooms', $vacantrooms);
     }
@@ -44,8 +54,9 @@ class AdminVacantRoomController extends Controller
 
     public function edit($id)
     {
-        $vacantroom = VacantRoom::find($id);
-        return view('admin.vacantrooms.edit')->with('vacantrooms', $vacantroom);
+        $vacantrooms = VacantRoom::find($id);
+        $posts = post::all();
+        return view('admin.vacantrooms.edit',compact('vacantrooms','posts'));
     }
 
     public function update(Request $request, $id)

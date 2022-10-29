@@ -5,15 +5,14 @@
                 <div class="row">
                     <div class="col-md-5">
                         <h2 class="footer-heading">About Us</h2>
-                        <p>The company itself is a very successful company. </p>
+                        <p>We offer our customers Quality services.Contact us to enquire more and for any feedback</p>
                     </div>
                     <div class="col-md-3 mx-auto">
                         <h2 class="footer-heading mb-4">Quick Links</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="{{ url('/') }}">About Us</a></li>
+                            <li><a href="#services-section">Services</a></li>
+                            <li><a href="#contact-section">Contact Us</a></li>
                         </ul>
                     </div>
 
@@ -29,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+        <div class="row text-center">
             <div class="col-md-12">
                 <p class="copyright"><small>&copy; <script>
                             document.write(new Date().getFullYear());

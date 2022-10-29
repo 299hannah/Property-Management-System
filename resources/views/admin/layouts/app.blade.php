@@ -12,7 +12,7 @@
 
         @section('main-content')
              @show      
-        @include('admin.layouts.footer')
+  
 
     </div>
     <script>
@@ -47,5 +47,6 @@
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 
 </body>
+@include('admin.layouts.footer')
 </html>
 

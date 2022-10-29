@@ -55,8 +55,11 @@ class AdminDamagedRoomController extends Controller
 
     public function edit($id)
     {
+
         $damagedrooms = DamagedRoom::find($id);
-        return view('admin.damagedrooms.edit')->with('damagedrooms', $damagedrooms);
+        $posts = post::all();
+
+        return view('admin.damagedrooms.edit',compact('damagedrooms','posts'));
     }
 
     public function update(Request $request, $id)

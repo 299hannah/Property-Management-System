@@ -2,17 +2,9 @@
 @section('headsection')
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    {{--
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}"> --}}
-    {{--
-<link rel="stylesheet" href="{{ asset('') }}"> --}}
-
     <script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-    {{-- <script src="{{ asset('admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script> --}}
     <script>
         table = $('#example').DataTable({
             "paging": true,
@@ -33,14 +25,9 @@
                         {{-- @include('admin.layout.pagehead') --}}
 
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Blank Page</li>
-                        </ol>
-                    </div>
+                 
                 </div>
-            </div><!-- /.container-fluid -->
+            </div>
         </section>
 
         <!-- Main content -->
@@ -51,19 +38,12 @@
                 <div class="card-header">
                     <h3 class="card-title">Title</h3><br><br>
                     <a class="col-lg-offset-5 btn btn-outline-primary" href="{{ route('post.create') }}">Add New</a>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
+                
                 </div>
                 <div class="card-body">
                     <table id="example" class="table table-bordered table-striped">
                         <thead>
-                            <tr>
+                            <tr class="even">
                                 <th>S.Name</th>
                                 <th>Title</th>
                                 <th>sub-title</th>
@@ -76,7 +56,7 @@
                         </thead>
                         <tbody>
                             @foreach ($posts as $post)
-                                <tr>
+                                <tr class="even">
                                     <td>{{ $loop->index + 1 }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->subtitle }}</td>
@@ -114,7 +94,7 @@
                         </tbody>
                         <tfoot>
 
-                            <tr>
+                            <tr class="odd">
                                 <th>S.Name</th>
                                 <th>Title</th>
                                 <th>sub-title</th>

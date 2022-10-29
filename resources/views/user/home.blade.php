@@ -10,29 +10,21 @@
 @section('heading2','Get the keys to your dream house')
 @section('sub-heading2','Its one click Away')
 @section('main-content')
-
-<div class="site-section" id="properties-section">
-    <div class="container">
-        <div class="row large-gutters">
-            @foreach ($posts as $post)
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-5 ">
-                <div class="ftco-media-1">
-                    <div class="ftco-media-1-inner">
-                        <a href="{{ route('post', $post->slug) }}" class="d-inline-block mb-4">
-                            <img src="{{ asset('images/post/' . $post->image) }}" alt="img;" class="img-fluid">
-
-                            {{-- <img src="{{ asset('user/images/property_1.jpg') }}" alt="img;" class="img-fluid"> --}}
-                        </a>
-
-
-                        <div class="ftco-media-details">
-
-                            <h3>{{ $post->title }}</h3>
-                            <p>{{ $post->subtitle }}</p>
-
-                            <strong>
-                                $202000
-                            </strong>
+    <div class="site-section" id="properties-section">
+        <div class="container">
+            <div class="row large-gutters">
+                @foreach ($posts as $post)
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
+                        <div class="ftco-media-1">
+                            <div class="ftco-media-1-inner">
+                                <a href="{{ route('post', $post->slug) }}" class="d-inline-block mb-4">
+                                    <img src="{{ asset('images/post/' . $post->image) }}" alt="img;" class="img-fluid">
+                                </a>
+                                <div class="ftco-media-details">
+                                    <h3>{{ $post->title }}</h3>
+                                    <p>{{ $post->subtitle }}</p>                                   
+                                </div>
+                            </div>
                         </div>
 
                     </div>

@@ -16,12 +16,10 @@ class AgentDamagedRoomController extends Controller
     {
         $this->middleware('agent');
     }
-
     public function index()
     {
 
     $damagedrooms  = DamagedRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
-        // $damagedrooms = DamagedRoom::all();
         return view('agent.damagedrooms.index')->with('damagedrooms', $damagedrooms);
     }
 

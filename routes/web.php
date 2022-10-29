@@ -60,7 +60,15 @@ Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function
     Route::get('/logout','AgentController@AgentLogout')->name('agent.logout')->middleware('agent');
     Route::get('/register','AgentController@AgentRegister')->name('agent.register');
     Route::post('/register/create','AgentController@AgentRegisterCreate')->name('agent.register.create');
-    Route::get('/profile', [ProfileController::class, 'index'])->name('agent.profile');
+    // Route::get('/profile', 'ProfileController@index')->name('agent.profile');
+    
+    Route::get('/profile/editprofile', 'ProfController@edit');
+    Route::post('/profile/update/', 'ProfController@update');
+    Route::get('/profile/profile', 'ProfController@index');
+    // Route::get('/profile/editprofile', 'EditProfileController@update')->name('profile.update');
+
+
+
 
     Route::get('/rooms', 'RoomsController@index');
     Route::get('/rooms/create', 'RoomsController@create');
@@ -80,7 +88,7 @@ Route::get('admin/home', [App\Http\Controllers\Admin\HomeController::class, 'ind
 Route::resource('admin/tenants/', AdminTenantsController::class);
 Route::get('admin/tenants/create', [AdminTenantsController::class, 'create']);
 Route::post('admin/tenants/store', [AdminTenantsController::class, 'store']);
-Route::get('admin/tenants/edit/{}tenant_id', [AdminTenantsController::class, 'edit']);
+Route::get('admin/tenants/edit/{tenant_id}', [AdminTenantsController::class, 'edit']);
 Route::post('admin/tenants/update/{tenant_id}', [AdminTenantsController::class, 'update']);
 Route::get('admin/tenants/show/{tenant_id}', [AdminTenantsController::class, 'show']);
 
@@ -129,12 +137,14 @@ Route::post('agent/transactions/store', [AgentTransactionsController::class, 'st
 Route::get('agent/transactions/edit/{transaction_id}', [AgentTransactionsController::class, 'edit']);
 Route::post('agent/transactions/update/{transaction_id}', [AgentTransactionsController::class, 'update']);
 Route::post('agent/transactions/{transaction_id}', [AgentTransactionsController::class, 'destroy']);
+// Route::get('admin/transactions/{transaction_id}', [AdminTransactionsController::class, 'transact']);
 
-// Route::get('tenants/', [TenantController::class, 'index']);
 
-Route::get('tenant/index', [TenantsController::class, 'index']);
-// Route::get('transactions/', [TenantsController::class, 'create']);
+// Route::get('tenant/index', [TenantsController::class, 'index']);
 Route::post('transactions/store', [TenantsController::class, 'store']);
+Route::post('home', [TenantsController::class, 'transact']);
+// Route::get('transactions/', [TenantsController::class, 'create']);`
+
 
 
 
