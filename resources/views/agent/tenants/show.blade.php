@@ -29,39 +29,30 @@
                                             <b>Email: {{ $tenants->email }}<br>
                         </div>
                     </div>
-                    <b>Phone Number: {{ $transactions->houseno }} <br>
-
-
-                    {{-- <div class="row">
-                        <div class="col-md-3 hh" style="float:right">
-                            <b>Billing For: {{ $transactions->billingfor }}<br>
-                                <b>Expected Amount: {{ $transactions->expectedamount }}<br>
-                                    <b>Amount Paid: </b>{{ $transactions->amountpaid }}<br>
-                                    <b>Balance: {{ $transactions->balance }}<br>
-                                        <b>Date Paid: {{ $transactions->datepaid }}<br>
-                        </div>
-                    </div> --}}
-                    <table class="table " id="example1">
+                    <table id="example1" class="table table-bordered table-stripped">
                         <thead>
-                            <tr class="tt">
-                                <th>ID</th>
+                            <tr>
                                 <th>Billing For</th>
+                                <th>Date Paid</th>
                                 <th>Expected Amount</th>
                                 <th>Amount Paid</th>
                                 <th>Balance</th>
-                                <th>Date Paid</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>October</td>
-                                <td>45000</td>
-                                <td>45000</td>
-                                <td>0</td>
-                                <td>30/9/2022</td>
-                            </tr>
-                        </tbody>
+                    <tbody>
+                        @php
+                            $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+                        @endphp
+                           @foreach ($transactions as $item )
+                              <tr>
+                                   <td>{{ $item->billingfor }}</td>
+                                   <td>{{ $item->datepaid }}</td>
+                                   <td>{{ $item->expectedamount }}</td>
+                                   <td>{{ $item->amountpaid }}</td>
+                                   <td>{{ $item->balance }}</td>
+                             </tr>
+                        @endforeach
+                       </tbody> 
                     </table>
                 </div>
             </div>

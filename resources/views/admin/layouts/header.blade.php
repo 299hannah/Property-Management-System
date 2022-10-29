@@ -90,6 +90,7 @@
          <nav class="mt-2">
              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                  data-accordion="false">
+                 <li class="nav-item menu-open">
                  <li class="nav-item">
                      <a href="{{ route('post.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
@@ -131,6 +132,7 @@
                          <i class="far fa-circle nav-icon"></i>
                          <p>Transactions</p>
                      </a>
+                 </li>
                  </li>
              </ul>
          </nav>

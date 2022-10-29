@@ -23,25 +23,16 @@
                     <div class="row">
                         <div class="col-md-3 hh" style="float:left">
                             <b>Name: {{ $tenants->name }}<br>
-                                <b>Phone Number: {{ $tenants->phoneno }} <br>
-                                    <b>House Number: {{ $tenants->houseno }}<br>
-                                        <b>ID Number: {{ $tenants->idno }}<br>
-                                            <b>Email: {{ $tenants->email }}<br>
+                            <b>Phone Number: {{ $tenants->phoneno }} <br>
+                            <b>House Number: {{ $tenants->houseno }}<br>
+                            <b>ID Number: {{ $tenants->idno }}<br>
+                            <b>Email: {{ $tenants->email }}<br>
                         </div>
                     </div>
-                    {{-- <div class="row">
-                        <div class="col-md-6 hh" style="float:right">
-                            <b>Name: {{ $tenants->name }}<br>
-                                <b> Phone Number: {{ $tenants->phonenumber }}<br>
-                                    <b>House Number: {{ $tenants->houseno }}<br>
-                                        <b>ID Number: {{ $tenants->idno }}<br>
-                                            <b>Email: {{ $tenants->email }}<br>
-                        </div>
-                    </div> --}}
                     <table class="table " id="example1">
                         <thead>
                             <tr class="tt">
-                                <th>ID</th>
+                                {{-- <th>ID</th> --}}
                                 <th>Billing For</th>
                                 <th>Expected Amount</th>
                                 <th>Amount Paid</th>
@@ -50,15 +41,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td>October</td>
-                                <td>45000</td>
-                                <td>30000</td>
-                                <td>10000</td>
-                                <td>30/9/2022</td>
-                            </tr>
-                        </tbody>
+                            @if ($post->houseno)
+                                category {{ $post->houseno }}
+                        @endif
+
+                            @php
+                                $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+                            @endphp
+                               @foreach ($transactions as $item )
+                                  <tr>
+                                       {{-- <td> --}}
+                                       <td>{{ $item->billingfor }}</td>
+                                       <td>{{ $item->expectedamount }}</td>
+                                       <td>{{ $item->amountpaid }}</td>
+                                       <td>{{ $item->balance }}</td>
+                                       <td>{{ $item->datepaid }}</td>
+                                 </tr>
+                            @endforeach
+                           </tbody> 
+                     
                     </table>
                 </div>
             </div>

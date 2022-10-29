@@ -25,7 +25,6 @@
                                 @endforeach
                         </div>
                         <button type="submit" class="btn btn-success toastrDefaultSuccess" name="submit">Save</button>
-                        <button type="submit" class="btn btn-success toastrDefaultSuccess"></button>
                     </form>
                 </div>
             </div>

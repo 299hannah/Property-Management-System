@@ -46,6 +46,7 @@ class AgentTenantsController extends Controller
     public function show($id)
     {
     $tenants = Tenant::find($id);
+    $transactions = Transactions::all();
         return view('agent.tenants.show', compact('tenants','transactions'));
     }
     public function edit($id)
