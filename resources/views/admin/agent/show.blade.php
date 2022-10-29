@@ -27,12 +27,7 @@
         <div class="col-sm-6">
     {{-- @include('admin.layout.pagehead') --}}
         </div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active"> Page</li>
-          </ol>
-        </div>
+      
       </div>
     </div><!-- /.container-fluid -->
   </section>
@@ -46,22 +41,10 @@
         <h3 class="card-title">Agents</h3><br><br>
    
         <a class="col-lg-offset-5 btn btn-outline-primary" href="{{ route('agent.create') }}">Add New</a>
-        <div class="card-tools">
-          <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-            <i class="fas fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
+  
       </div>
       <div class="card-body">
-        <div class="card">
-          <div class="card-header">
-            {{-- @include('inc.messages') --}}
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
+     
             <table id="example" class="table table-bordered table-striped">
               <thead>
                 <tr>
@@ -121,14 +104,10 @@
                 </tr>
               </tfoot>
             </table>
-          </div>
           <!-- /.card-body -->
-        </div>
+        {{-- </div> --}}
       </div>
-      <!-- /.card-body -->
-      <div class="card-footer">
-        Footer
-      </div>
+     
       <!-- /.card-footer-->
     </div>
     <!-- /.card -->

@@ -25,7 +25,8 @@ class EditProfileController extends Controller
         ]);
         $agent=Agent::find(Auth::guard('agent')->user()->id); 
         $agent->name = $agent->name;
-        $agent->save(); 
+        // dd($request->all());
+        // $agent->save(); 
         $profagent = profagent::where('agent_id',Auth::guard('agent')->user()->id)->first();
         if(!$profagent)
         {
@@ -43,12 +44,12 @@ class EditProfileController extends Controller
                 } 
                 $profagent->email = $request->email;
                 $profagent->phone = $request->phone;
-      
-            $profagent->save();   
+             
+            // $profagent->save();   
         }
         // $agent->agent_id = Auth::guard('agent')->user()->id;
         // $input = $request->all();
-        // dd($request->all());
+        dd($request->all());
         // $agent->save(); 
 
        

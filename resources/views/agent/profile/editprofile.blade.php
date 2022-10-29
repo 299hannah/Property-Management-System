@@ -29,7 +29,7 @@
 
             <div class="card-body">
                 @if(Session::has(''))@endif
-                <form action="'profile.update', $agent->id" method="POST">
+                <form action="{{ url('profile/update/'. $agent->id) }}" method="POST">
                     @csrf
                     <div class="row" class="col-md-12">
                         <div class="">
@@ -49,7 +49,7 @@
                                 <a href="{{ route('profile.index') }}" class=" submit btn btn-info">update </a>
                                         {{-- <a href="{{ url('agent/editprofile') }}" class="btn btn-info">update </a> --}}
                                         {{-- {{ url('agent/vacantrooms/edit/' . $item->id) }} --}}
-                        {{-- <button type="submit" class="btn btn-info pull-right">Update</button> --}}
+                        <button type="submit" class="btn btn-info pull-right">Update</button>
 
                             </div>
 

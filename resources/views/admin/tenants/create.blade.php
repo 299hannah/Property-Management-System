@@ -65,7 +65,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                       --}}
+                       
                             </div>
                             <div class="card-footer text-center form-group col-lg-12">
                                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>

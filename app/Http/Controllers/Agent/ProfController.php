@@ -74,7 +74,7 @@ class ProfController extends Controller
     {
         $agent = profagent::where('agent_id',Auth::guard('agent')->user()->id)->first();
         // $agent = profagent::where('id',$id)->first();
-
+  
         // return $post; for testing array
         return view('agent.profile.editprofile',compact('agent'));
         // $agent = $this->getagentByid($id);
@@ -124,7 +124,7 @@ class ProfController extends Controller
                 // $profagent->save();   
             }
             $agent=Agent::find(Auth::guard('agent')->user()->id); 
-            return view('agent.profile.editprofile',compact('agent'));
+            return view('agent.profile.profile',compact('agent'));
        
     
         

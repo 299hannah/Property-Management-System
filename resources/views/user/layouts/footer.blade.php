@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-5 text-center">
+        <div class="row text-center">
             <div class="col-md-12">
                 <p class="copyright"><small>&copy; <script>
                             document.write(new Date().getFullYear());

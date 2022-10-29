@@ -1,6 +1,7 @@
 @extends('user.layouts.app')
 @section('bg-img3', asset('user/images/reg.jpg'))
 @section('main-content')
+
     <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(@yield('bg-img3')" data-aos="fade">
         <div class="container">
             <div class="row align-items-center justify-content-center">
@@ -11,18 +12,24 @@
         </div>
         <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
     </div>
+    <br><br>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <b><p class="text-center">Payment Breakdown</p></b>
+
                 <div class="card">
                     <div class="card-body">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
                             Make Payment
                         </button>
+                        <br>
                         <div class="modal fade" id="modal-default">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
+                                        
                                     </div>
                                     <div class="modal-body">
                                         <section class="content-header">
@@ -99,10 +106,14 @@
                             </div>
                         </div>
                     <div>
+                        
+                   
                 </div>
                     </div>
+                 
                     <table id="example" class="table table-bordered table-stripped">
                         <thead>
+
                             <tr>
                                 <th>Billing For</th>
                                 <th>Date Paid</th>
@@ -112,9 +123,9 @@
                             </tr>
                         </thead>
                    <tbody>
-                    {{-- @php
+                    @php
                         $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
-                    @endphp --}}
+                    @endphp
                        @foreach ($transactions as $item )
                           <tr>
                                <td>{{ $item->billingfor }}</td>
@@ -126,12 +137,9 @@
                     @endforeach
                    </tbody> 
                     </table>
-                    <div class="mt-5">
-                        <img src="{{ asset('user/images/person_1.jpg') }}" alt="Image"
-                            class="w-25 mb-3 rounded-circle">
-                        <h5 class="text-black">{{ $item->name }}</h5>
-                    </div>
+              
                 </div>
             </div>
         </div>
+        <br><br>
 @endsection

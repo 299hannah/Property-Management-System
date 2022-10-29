@@ -16,6 +16,7 @@
                         </textarea><br>
                         <label>Select Property</label>
                         <div class="row">
+                            
                                 @foreach ($posts as $post)
                                     <div class="col-sm-1">
                                         <div class="checkbox">
@@ -25,7 +26,6 @@
                                 @endforeach
                         </div>
                         <button type="submit" class="btn btn-success toastrDefaultSuccess" name="submit">Save</button>
-                        <button type="submit" class="btn btn-success toastrDefaultSuccess"></button>
                     </form>
                 </div>
             </div>

@@ -9,15 +9,15 @@
     <section class="content-header"> </section>
     <section class="content">
 <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(@yield('bg-img3')" data-aos="fade">
-    <div class="container">
+    {{-- <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-md-5 mx-auto mt-lg-5 text-center">
+            <div class="col-md-5 mx-auto mt-lg-5 text-center"> --}}
                 {{-- <h1>{{ $post->title }}</h1> --}}
-                <p class="mb-5"><strong class="text-white">Welcome</strong></p>
+                {{-- <p class="mb-5"><strong class="text-white">Welcome</strong></p>
 
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
 </div>
@@ -41,10 +41,10 @@
 
                             <p>Name: <b>{{ $agent->name }}</b></p>
                             <p>Email: <b>{{ $agent->email }}</b></p>
-                            {{-- <p>Phone: <b>{{ $agent->phoneno }}</b></p> --}}
+                            <p>Phone: <b>{{ $agent->phone }}</b></p>
 
                         </div>
-                        {{-- <a href="{{ route('profile.update',  ['id' => $agent->id]) }}" class="btn btn-info">update </a> --}}
+                        <a href="{{ url('profile/editprofile/'. $agent->id) }}" class="btn btn-info">update </a>
                         {{-- <a href="{{ route('profile.update', $agent->id) }}" class="btn btn-info">update </a> --}}
                         {{-- <button type="submit" class="btn btn-primary">update</button> --}}
 

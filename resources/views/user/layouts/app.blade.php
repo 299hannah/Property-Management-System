@@ -9,7 +9,7 @@
         @section('main-content')
              @show 
             </div>          
-        @include('user.layouts.footer')
+   
         <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
         <script>
             //toastr notifications
@@ -42,4 +42,5 @@
          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </body> 
+@include('user.layouts.footer')
 </html>
