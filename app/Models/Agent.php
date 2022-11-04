@@ -35,6 +35,7 @@ class Agent extends  Authenticatable
         'email',
         'password',
         'status',
+        'post_id',
     ];
 
     /**
@@ -61,6 +62,12 @@ class Agent extends  Authenticatable
     {
         return $this->belongsToMany(post::class,'posts')->withTimestamps();
     } 
-     
+    
+    public function profagent()
+    {
+        return $this->hasOne(Profile::class, 'agent_id');
+    }
+   
+
 }
 

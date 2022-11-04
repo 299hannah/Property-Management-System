@@ -43,18 +43,15 @@
                     </div>
                     <div class="form-group" data-select2-id="51">
                       <label>Select Property</label>
-                        <div class="row">
-                            @foreach ($posts as $post)
+                      <div class="row">
+                        @foreach ($posts as $post)
                             <div class="col-lg-3">
                                 <div class="checkbox">
-                                    <label ><input type="checkbox" name="post_id" value="{{ $post->id }}">
-                                        {{ $agent->post_id == $agent->post_id ? 'selected' : '' }}>
-                                        {{ $post->title }}
-                                    </label>
+                                    <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
                                 </div>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
+                    </div>
                       </div>
                     </div>
                     <div class="card-footer text-center form-group col-lg-12">

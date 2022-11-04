@@ -44,6 +44,7 @@
                         </label>
                     </div>
                      </div>
+                
                      <div class="col">
                         <div class="form-group">
                             <label for="slug">Property Slug</label>

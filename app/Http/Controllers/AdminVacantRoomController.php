@@ -8,8 +8,18 @@ use App\Models\VacantRoom;
 
 class AdminVacantRoomController extends Controller
 {
+         /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
+
         $vacantrooms = VacantRoom::all();
         return view('admin.vacantrooms.index')->with('vacantrooms', $vacantrooms);
     }

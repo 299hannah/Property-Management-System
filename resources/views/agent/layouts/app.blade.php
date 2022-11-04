@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     @include('agent.layouts.head')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -9,10 +11,8 @@
 
         @section('main-content')
              @show      
-        @include('agent.layouts.footer')
 
     </div>
-
 
     <script>
         //toastr notifications
@@ -43,7 +43,9 @@
         }, 800);
     </script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
 </body>
+@include('agent.layouts.footer')
+
 </html>
 

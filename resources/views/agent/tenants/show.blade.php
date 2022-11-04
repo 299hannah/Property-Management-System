@@ -23,36 +23,39 @@
                     <div class="row">
                         <div class="col-md-3 hh" style="float:left">
                             <b>Name: {{ $tenants->name }}<br>
-                                <b>Phone Number: {{ $tenants->phoneno }} <br>
-                                    <b>House Number: {{ $tenants->houseno }}<br>
-                                        <b>ID Number: {{ $tenants->idno }}<br>
-                                            <b>Email: {{ $tenants->email }}<br>
+                            <b>Phone Number: {{ $tenants->phoneno }} <br>
+                            <b>House Number: {{ $tenants->houseno }}<br>
+                            <b>ID Number: {{ $tenants->idno }}<br>
+                            <b>Email: {{ $tenants->email }}<br>
                         </div>
                     </div>
-                    <table id="example1" class="table table-bordered table-stripped">
+                    <table class="table " id="example1">
                         <thead>
-                            <tr>
+                            <tr class="tt">
+                                {{-- <th>ID</th> --}}
                                 <th>Billing For</th>
-                                <th>Date Paid</th>
                                 <th>Expected Amount</th>
                                 <th>Amount Paid</th>
                                 <th>Balance</th>
+                                <th>Date Paid</th>
                             </tr>
                         </thead>
-                    <tbody>
-                        @php
-                            $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
-                        @endphp
-                           @foreach ($transactions as $item )
-                              <tr>
-                                   <td>{{ $item->billingfor }}</td>
-                                   <td>{{ $item->datepaid }}</td>
-                                   <td>{{ $item->expectedamount }}</td>
-                                   <td>{{ $item->amountpaid }}</td>
-                                   <td>{{ $item->balance }}</td>
-                             </tr>
-                        @endforeach
-                       </tbody> 
+                        <tbody>
+                            {{-- @php
+                                $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+                            @endphp --}}
+                               @foreach ($transactions as $item )
+                                  <tr>
+                                       {{-- <td>{{ $item->loop }}</td> --}}
+                                       <td>{{ $item->billingfor }}</td>
+                                       <td>{{ $item->expectedamount }}</td>
+                                       <td>{{ $item->amountpaid }}</td>
+                                       <td>{{ $item->balance }}</td>
+                                       <td>{{ $item->datepaid }}</td>
+                                 </tr>
+                            @endforeach
+                           </tbody> 
+                     
                     </table>
                 </div>
             </div>

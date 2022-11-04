@@ -8,7 +8,7 @@ use App\Models\post;
 use App\Models\Transactions;
 use Illuminate\Support\Facades\Auth;
 
-
+ 
 
 class AdminTenantsController extends Controller
 {
@@ -33,7 +33,7 @@ class AdminTenantsController extends Controller
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'email' => ['required', 'string', 'email', 'max:255' ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
@@ -50,7 +50,8 @@ class AdminTenantsController extends Controller
     public function show($id)
     
     {
-        $transactions = Transactions::all();
+        $transactions = Transactions::where('houseno', Auth::user()->houseno)->get();
+        // $transactions = Transactions::where('houseno', Auth::user()->houseno)->get();
         $tenants = Tenant::find($id);
         return view('admin.tenants.show', compact('transactions', 'tenants'));
     }

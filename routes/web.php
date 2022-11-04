@@ -14,9 +14,9 @@ use App\Http\Controllers\AgentDamagedRoomController;
 use App\Http\Controllers\AgentTenantsController;
 use App\Http\Controllers\AgentTransactionsController;
 use App\Http\Controllers\AdminTransactionsController;
-// use App\Http\Controllers\TenantController;
 use App\Http\Controllers\TenantProfileController;
 use App\Http\Controllers\TenantsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -59,15 +59,13 @@ Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function
     
     Route::get('/logout','AgentController@AgentLogout')->name('agent.logout')->middleware('agent');
     Route::get('/register','AgentController@AgentRegister')->name('agent.register');
-    Route::post('/register/create','AgentController@AgentRegisterCreate')->name('agent.register.create');
-
-    Route::get('/rooms', 'RoomsController@index');
-    Route::get('/rooms/create', 'RoomsController@create');
-    Route::post('/rooms/store', 'RoomsController@store');
-    Route::get('/rooms/edit/{room_id}', 'RoomsController@edit');
-    Route::post('/rooms/update/{room_id}', 'RoomsController@update');
-    Route::post('/rooms/{room_id}', 'RoomsController@destroy');
-
+    Route::post('/register/create','AgentController@AgentRegisterCreate')->name('agent.register.crepate');
+    // Route::get('/profile', 'ProfileController@index')->name('agent.profile');
+    
+    Route::get('/profile/index', 'ProfController@index');
+    Route::get('/profile/editprofile/{id}', 'ProfController@edit');
+    // Route::get('/profile/editprofile/{agent_id}', 'EditProfileController@update');
+    Route::post('/profile/update/', 'ProfController@update');
 
 });
 
@@ -105,7 +103,6 @@ Route::post('agent/tenants/store', [AgentTenantsController::class, 'store']);
 Route::get('agent/tenants/edit/{tenant_id}', [AgentTenantsController::class, 'edit']);
 Route::post('agent/tenants/update/{tenant_id}', [AgentTenantsController::class, 'update']);
 Route::get('agent/tenants/show/{tenant_id}', [AgentTenantsController::class, 'show']);
-Route::get('tenants/transactions', [TransactionsController::class, 'index']);
 Route::get('tenants/profile', [TenantProfileController::class, 'index'])->name('tenant.profile');
 
 Route::get('agent/vacantrooms', [AgentVacantRoomController::class, 'index']);

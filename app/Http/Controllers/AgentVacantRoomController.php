@@ -10,7 +10,6 @@ class AgentVacantRoomController extends Controller
     {
         $this->middleware('agent');
     }
-
     public function index()
     {
     $vacantrooms  = VacantRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();

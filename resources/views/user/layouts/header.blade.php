@@ -15,10 +15,11 @@
             <div class="col-12 col-md-10 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                        <li><a href="{{ url('/home') }}" class="nav-link">Home</a></li>
+                        <li><a href="{{ url('/') }}" class="nav-link">Home</a></li>
                         <li><a href="#properties-section" class="nav-link">Properties</a></li>
                         <li><a href="#agents-section" class="nav-link">Agents</a></li> 
-                        <li><a href="#about-section" class="nav-link">About</a></li>
+                        <li><a href="#services-section" class="nav-link">About</a></li>
+                        {{-- <li><a href="{{ route('news') }}" class="nav-link">News</a></li> --}}
                         <li><a href="#contact-section" class="nav-link">Contact</a></li> 
                         @guest
                         @if (Route::has('login'))
@@ -27,21 +28,28 @@
                         </li>
                         @endif
                         @else
+                        
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->email }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a  href="{{ route('logout') }}" class="dropdown-item text-black"  onclick="event.preventDefault();
+                                <div class=" dropdown-item">
+                                    <a href="{{ url('/home') }}" class="btn btn-default btn-flat text-black">home</a>
+                                </div>
+                                <div class=" dropdown-item">
+                                    <a href="{{ route('tenant.profile') }}" class="btn btn-default btn-flat text-black">Profile</a>
+                                </div>
+                                <div class=" dropdown-item">
+                                <a  href="{{ route('logout') }}" class="text-black"  onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+                               
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                                <div class=" dropdown-item">
-                                    <a href="{{ route('tenant.profile') }}" class="btn btn-default btn-flat">Profile</a>
-                                </div>
+                            </div>
                             </div>
                         </li>
                         @endguest

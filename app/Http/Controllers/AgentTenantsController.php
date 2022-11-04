@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\post;
 use App\Models\Transactions;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class AgentTenantsController extends Controller
@@ -17,7 +17,12 @@ class AgentTenantsController extends Controller
     }
     public function index()
     {
-    $tenants  = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
+        // $tenants = Tenant::where('post_id', session('post_id')); 
+
+    // $tenants  = Tenant::where('post_id',Auth::guard('agent')->user()->id)->get();
+    $tenants = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get();    
+
+    // $tenants = Tenant::where('post_id',optional(Auth::user())->id)->get();    
     return view('agent.tenants.index',compact('tenants'));
     }
     public function create()
@@ -29,21 +34,26 @@ class AgentTenantsController extends Controller
     {   
         $this->validate($request,[
             'name' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
-            'idno' => 'required|numeric','unique:admins',
+            'idno' => 'required|numeric',
         ]);
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
         // dd($request->all());
+        $tenant ->posts()->sync($request->posts);
+    
+
+        // $agents = Agent::where('post_id', session('post_id')); 
+
         $tenant->save(); 
-        session()->flash('success', 'Added successfully');
+         session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
-    public function show($id)
+    public function show($id )
     {
     $tenants = Tenant::find($id);
     $transactions = Transactions::all();
@@ -51,9 +61,9 @@ class AgentTenantsController extends Controller
     }
     public function edit($id)
     {
-        $tenant = Tenant::find($id);
+        $tenants = Tenant::find($id);
         $posts = post::all();
-        return view('agent.tenants.edit', compact('tenant','posts'));
+        return view('agent.tenants.edit', compact('tenants','posts'));
     }
     public function update(Request $request, $id)
     {  

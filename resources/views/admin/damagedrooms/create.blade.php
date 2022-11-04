@@ -16,6 +16,7 @@
                         </textarea><br>
                         <label>Select Property</label>
                         <div class="row">
+                            
                                 @foreach ($posts as $post)
                                     <div class="col-sm-1">
                                         <div class="checkbox">

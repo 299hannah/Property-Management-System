@@ -50,7 +50,7 @@
                  <a href="" class="media-body">
                      <!-- Menu Footer-->
                      <div class=" dropdown-item">
-                         <a href="#" class="btn btn-default btn-flat">Profile</a>
+                            <a href="{{ url('agent/profile/index') }}" class="btn btn-default btn-flat">Profile</a>                    
                      </div>
                      <div class="dropdown-divider"></div>
                      <div class="dropdown-item btn btn-default pull-right">
@@ -96,12 +96,6 @@
                          <p>Tenants</p>
                      </a>
                  </li>
-                 {{-- <li class="nav-item">
-                     <a href="{{ url('agent/rooms') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Rooms</p>
-                     </a>
-                 </li> --}}
                  <li class="nav-item">
                      <a href="{{ url('agent/vacantrooms') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>

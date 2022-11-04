@@ -24,8 +24,8 @@ class TenantProfileController extends Controller
         
     }
 
-    // $agents=Agent::find(Auth::guard('agent')->user()->id);
-    // $tenantProfs=tenantProf::where('post_id','=', Auth::user())->get();
+            // $agents=Agent::find(Auth::guard('agent')->user()->id);
+            // $tenantProfs=tenantProf::where('post_id','=', Auth::user())->get();
         $tenant=Tenant::find(Auth::user()->id);
         return view('agent.tenants.profile',compact('tenant'));
         // return view('/home',compact('tenant'));

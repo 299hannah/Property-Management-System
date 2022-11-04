@@ -41,16 +41,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($post->houseno)
-                                category {{ $post->houseno }}
-                        @endif
-
-                            @php
+                            {{-- @php
                                 $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
-                            @endphp
+                            @endphp --}}
                                @foreach ($transactions as $item )
                                   <tr>
-                                       {{-- <td> --}}
+                                       {{-- <td>{{ $item->loop }}</td> --}}
                                        <td>{{ $item->billingfor }}</td>
                                        <td>{{ $item->expectedamount }}</td>
                                        <td>{{ $item->amountpaid }}</td>

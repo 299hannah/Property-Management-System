@@ -8,7 +8,7 @@ use App\Models\post;
 // use App\Models\User;
 // use Illuminate\Support\Facades\Session;
 // use Illuminate\Support\Facades\DB;
-use App\Models\category_user;
+use App\Models\Transactions;
 use \Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +24,10 @@ class HomeController extends Controller
     {
         
     $tenant = Tenant::where('post_id',optional(Auth::guard('web')->user())->id)->get(); 
-    
-        return view('/home',compact('tenant'));
+    $transactions  = Transactions::where('post_id', optional(Auth::user())->id)->get();
+    // $transactions = Transactions::all();
+
+        return view('/home',compact('tenant','transactions'));
     }
 }
 

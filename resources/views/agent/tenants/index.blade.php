@@ -6,13 +6,16 @@
 <script src="{{ asset('admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 <script>
-  table = $('#example').DataTable( {
-    "paging": true,
-      "ordering": true,
-    "responsive": true,
-       "lengthChange": false, 
-       "autoWidth": false
-} );
+    table = $('#example').DataTable({
+        // "paging": true
+        "lengthChange": false
+        , "autoWidth": false,
+        // , "ordering": true
+        , "responsive": true
+
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example_wrapper .col-md-6:eq(0)');
+
 </script>
 @endsection
 @section('main-content')
@@ -54,16 +57,7 @@
             </table>
           </div>
         </div>
-        <script>
-          $(document).ready(function() {
-              $('.addbtn').click(function() {
-                  var row = $(this).closest('tr');
-                  var exp = row.find('#post_id').text();
-                  $('#post_id').val(exp);
-                  console.log(exp);
-              });
-          });
-      </script>
-          </section>
-        </div>
+</div>
+</section>
+</div>
 @endsection

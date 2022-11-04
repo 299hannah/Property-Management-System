@@ -12,7 +12,7 @@
                         <p class="mb-5 text-shadow">
                             @yield('sub-heading')
                         </p>
-                        <p><a href=""  class="btn btn-primary px-5 py-3">Get Started</a></p>
+                        <p><a href="#properties-section"  class="btn btn-primary px-5 py-3">Get Started</a></p>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                         <p class="mb-5 text-shadow">
                             @yield('sub-heading2')
                              </p>
-                        <p><a href="" class="btn btn-primary px-5 py-3">Get Started</a></p>
+                        <p><a href="#properties-section" class="btn btn-primary px-5 py-3">Get Started</a></p>
                     </div>
                 </div>
             </div>

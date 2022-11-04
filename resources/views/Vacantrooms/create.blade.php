@@ -2,29 +2,7 @@
 @extends('admin.layouts.app')
 
 @section('main-content')
-    {{-- <div class="card center" >
-        <div class="card-header">Vacant rooms Page</div>
-        <div class="card-body">
-
-            <form action="{{ url('vacantrooms/store') }}" method="post">
-               
-                {!! csrf_field() !!}
-                <div class="row mb-3">
-                    <div class="col">
-                        <label>House Number</label><br>
-                        <input type="text" name="houseno" id="houseno" class="form-control"><br>
-                    </div>
-                    <div class="col">
-                        <label>Floor</label><br>
-                        <input type="text" name="floor" id="floor" class="form-control"><br>
-                    </div>
-                </div>
-                <div style="text-align:center;">
-                    <button type="submit" class="btn btn-success center" name="submit">Save</button>
-                </div>
-            </form>
-        </div>
-    </div> --}}
+   
     <div class="content-wrapper">
         <section class="content">
     <div class="modal fade" id="modal-default">

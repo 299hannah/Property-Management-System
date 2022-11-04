@@ -16,8 +16,11 @@ class Room extends Model
     public function getRouteKeyName(){
         return 'slug';
     }
-    public function profile(){
-        return $this->hasOne(Profile::class, 'room_id');
+    // public function profile(){
+    //     return $this->hasOne(Profile::class, 'room_id');
+    // }
+    public function transactions()
+    {
+        return $this->belongsToMany('App\Models\Transactions','houseno')->withTimestamps();
     }
-
 }

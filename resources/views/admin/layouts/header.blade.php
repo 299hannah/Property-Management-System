@@ -6,11 +6,9 @@
              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
          </li>
          <li class="nav-item d-none d-sm-inline-block">
-             <a href="index3.html" class="nav-link">Home</a>
+             <a href="{{ ('admin') }}" class="nav-link">Home</a>
          </li>
-         <li class="nav-item d-none d-sm-inline-block">
-             <a href="#" class="nav-link">Contact</a>
-         </li>
+      
      </ul>
 
      <!-- Right navbar links -->
@@ -48,9 +46,9 @@
              </a>
              <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                  <a href="" class="media-body">
-                     <div class=" dropdown-item">
+                     {{-- <div class=" dropdown-item">
                          <a href="#" class="btn btn-default btn-flat">Profile</a>
-                     </div>
+                     </div> --}}
                      <div class="dropdown-divider"></div>
                      <div class="dropdown-item btn btn-default pull-right">
                          <a href="{{ route('admin.logout') }}" class="btn btn-default btn-flat">Logout</a>
@@ -97,6 +95,13 @@
                          <p>Properties</p>
                      </a>
                  </li>
+                 {{-- <li class="nav-item">
+                     <a href="{{ route('user.index') }}" class="nav-link">
+                 <i class="far fa-circle nav-icon"></i>
+                 <p>User</p>
+                 </a>
+                 </li> --}}
+
                  <li class="nav-item">
                      <a href="{{ route('agent.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
@@ -109,6 +114,9 @@
                          <p>Locations</p>
                      </a>
                  </li>
+                 {{-- </ul> --}}
+                 {{-- </li> --}}
+
                  <li class="nav-item">
                      <a href="{{ url('admin/tenants') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
@@ -135,6 +143,9 @@
                  </li>
                  </li>
              </ul>
+
+
+
          </nav>
      </div>
  </aside>

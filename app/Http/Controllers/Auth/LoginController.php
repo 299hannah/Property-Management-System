@@ -99,7 +99,20 @@ class LoginController extends Controller
 
                 return ['email' => 'inactive', 'password' => 'you are not activated please contact admin'];
             } else {
-               
+                // $req->session()->put('email',$data['category_id']);
+                // Session::has('email', $user2);
+                //  Session::put('email', $user);
+                // Session::put('post', $user->post);
+
+                
+                // $user = $request->user(); 
+                // $id = $request->user()->id; .
+           
+
+                // Session::put('category_id', $variable);
+                // Session::get('email', $user->category);
+                // $request->authenticate();
+                // $data = $request->input();
                 return ['email' => $request->email, 'password' => $request->password, 'status' => 3];
              
 
