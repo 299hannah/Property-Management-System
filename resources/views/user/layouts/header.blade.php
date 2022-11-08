@@ -19,7 +19,6 @@
                         <li><a href="#properties-section" class="nav-link">Properties</a></li>
                         <li><a href="#agents-section" class="nav-link">Agents</a></li> 
                         <li><a href="#services-section" class="nav-link">About</a></li>
-                        {{-- <li><a href="{{ route('news') }}" class="nav-link">News</a></li> --}}
                         <li><a href="#contact-section" class="nav-link">Contact</a></li> 
                         @guest
                         @if (Route::has('login'))

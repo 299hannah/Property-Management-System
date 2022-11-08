@@ -64,8 +64,7 @@ Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function
     
     Route::get('/profile/index', 'ProfController@index');
     Route::get('/profile/editprofile/{id}', 'ProfController@edit');
-    // Route::get('/profile/editprofile/{agent_id}', 'EditProfileController@update');
-    Route::post('/profile/update/', 'ProfController@update');
+    Route::post('/profile/update/{id}', 'ProfController@update');
 
 });
 

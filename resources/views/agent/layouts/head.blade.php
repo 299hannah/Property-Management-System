@@ -5,6 +5,7 @@
 <title>PMS | rms</title>
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
 <!-- Ionicons -->
@@ -25,8 +26,7 @@
 <!-- summernote -->
 <link rel="stylesheet" href="{{ asset('admin/plugins/summernote/summernote-bs4.min.css') }}">
 {{-- <link rel="stylesheet" href="{{ asset('plugins/simplemde/simplemde.min.css') }}"> --}}
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+
 
 
 <!-- jQuery -->
@@ -57,12 +57,8 @@
 <script src="{{ asset('admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin/dist/js/adminlte.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-{{-- <script src="../../plugins/summernote/summernote-bs4.min.js"></script> --}}
+
+<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
 <!-- CodeMirror -->
 {{-- <script src="{{ asset('admin/plugins/codemirror/codemirror.js') }}"></script> --}}
 {{-- <script src="{{ asset('admin/plugins/codemirror/mode/css/css.js') }}"></script>
@@ -71,3 +67,4 @@
 
 @section('headsection')
 @show
+

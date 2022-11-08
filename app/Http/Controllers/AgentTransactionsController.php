@@ -18,9 +18,6 @@ class AgentTransactionsController extends Controller
         $transactions = Transactions::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
         return view('agent.transactions.index',compact('transactions')); 
     }
-
-    // public function
-
     public function create()
     {   
         return view('agent.transactions.create');

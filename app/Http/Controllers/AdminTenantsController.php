@@ -47,13 +47,12 @@ class AdminTenantsController extends Controller
         session()->flash('success', 'Added successfully');
         return redirect('admin/tenants');
     }
-    public function show($id)
-    
+    public function show($id)    
     {
-        $transactions = Transactions::where('houseno', Auth::user()->houseno)->get();
-        // $transactions = Transactions::where('houseno', Auth::user()->houseno)->get();
         $tenants = Tenant::find($id);
-        return view('admin.tenants.show', compact('transactions', 'tenants'));
+        $transactions = Transactions::all();
+        // $transactions = Transactions::where('houseno', Auth::user()->houseno)->get();
+        return view('admin.tenants.show', compact('tenants', 'transactions'));
     }
 
     public function edit($id)
@@ -62,7 +61,7 @@ class AdminTenantsController extends Controller
 
         $posts = post::all();
 
-        return view('admin.tenants.edit', compact('tenant', 'posts'));
+        return view('admin.tenants.edit', compact('tenant', 'posts' ));
     }
 
     public function update(Request $request, $id)
@@ -72,9 +71,7 @@ class AdminTenantsController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:admins'],
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
-
         ]);
-
         $request->status ?: $request['status'] = 0;
         $tenant = Tenant::where('id', $id)->update($request->except('_token', '_method', 'post'));
         Tenant::find($id)->posts()->sync($request->post);

@@ -23,6 +23,7 @@ class AgentVacantRoomController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        // dd($request->all());
         VacantRoom::create($input);
         session()->flash('success', 'Added successfully');
         return redirect('agent/vacantrooms');

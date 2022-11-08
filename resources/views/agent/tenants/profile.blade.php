@@ -30,11 +30,11 @@
         </div>
         <div class="col-md-8">
             <p>Name:   <b>{{ $tenant->name }}</b></p>
+            <p>House Number: <b>{{ $tenant->houseno}}</b></p>
             <p>Email:  <b>{{ $tenant->email }}</b></p>
             <p>Phone:  <b>{{ $tenant->phoneno }}</b></p>
-
-
-
+            <p>Post Id: <b>{{ $tenant->post_id }}</b></p>
+            {{-- <p>Post Id: <b>{{ $tenant->post_id }}</b></p> --}}
         </div>
 
                 </div>

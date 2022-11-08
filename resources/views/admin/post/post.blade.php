@@ -53,16 +53,22 @@
                         </div>
                      </div>
                     </div>
-                        <div class="form-group" data-select2-id="51">
-                            <label>Select Location</label>
-                            <select class="select2 select2-hidden-accessible" multiple=""
-                                data-placeholder="Select a State" style="width: 100%;" data-select2-id="7"
-                                tabindex="-1" aria-hidden="true"name="categories[]">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <div class="form-group" data-select2-id="51">
+                                <label>Select Location</label>
+                                <select class="select2 select2-hidden-accessible" multiple=""
+                                    data-placeholder="Select a State" style="width: 100%;" data-select2-id="7"
+                                    tabindex="-1" aria-hidden="true"name="categories[]">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
+                        <div class="col">
+                        </div>
+                    </div>
                     <section class="content">
                         <div class="row">
                             <div class="container">

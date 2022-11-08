@@ -17,12 +17,7 @@ class AgentTenantsController extends Controller
     }
     public function index()
     {
-        // $tenants = Tenant::where('post_id', session('post_id')); 
-
-    // $tenants  = Tenant::where('post_id',Auth::guard('agent')->user()->id)->get();
     $tenants = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get();    
-
-    // $tenants = Tenant::where('post_id',optional(Auth::user())->id)->get();    
     return view('agent.tenants.index',compact('tenants'));
     }
     public function create()
@@ -44,11 +39,7 @@ class AgentTenantsController extends Controller
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
         // dd($request->all());
-        $tenant ->posts()->sync($request->posts);
-    
-
-        // $agents = Agent::where('post_id', session('post_id')); 
-
+        $tenant ->posts()->sync($request->posts);    
         $tenant->save(); 
          session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');

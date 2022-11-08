@@ -69,27 +69,13 @@
                     </td>
                 </tr>
                 @endforeach
-
-
-
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>S.Name</th>
-                  <th>Category Name</th>
-                  <th>Slug</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </tfoot>
             </table>
           </div>        
-        <div class="card-footer">
+        {{-- <div class="card-footer">
           Footer
-        </div>
+        </div> --}}
       </div>
     </section>
   </div>
-
-
 @endsection

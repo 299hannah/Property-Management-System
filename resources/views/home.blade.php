@@ -71,7 +71,7 @@
                                                                     <option name="religion3">May</option>
                                                                     <option name="religion3">June</option>
                                                                     <option name="religion3">July</option>
-                                                                    <option name="religion3">August</option>
+                                                                    <option name="religion3">August</option`>
                                                                     <option name="religion3">September</option>
                                                                     <option name="religion3">October</option>
                                                                     <option name="religion3">November</option>
@@ -102,20 +102,18 @@
                             </div>
                         </div>
                     <div>
-                        
-                   
                 </div>
-                    </div>
-                 
-                    <table id="example" class="table table-bordered table-stripped">
+            </div>
+                <table id="example" class="table table-bordered table-stripped">
                         <thead>
-
                             <tr>
                                 <th>Billing For</th>
                                 <th>Date Paid</th>
                                 <th>Expected Amount</th>
                                 <th>Amount Paid</th>
                                 <th>Balance</th>
+                                <th>Post_id</th>
+
                             </tr>
                         </thead>
                    <tbody>
@@ -129,11 +127,11 @@
                                <td>{{ $item->expectedamount }}</td>
                                <td>{{ $item->amountpaid }}</td>
                                <td>{{ $item->balance }}</td>
+                               <td>{{ $item->post_id }}</td>
                          </tr>
                     @endforeach
                    </tbody> 
-                    </table>
-              
+                </table>
                 </div>
             </div>
         </div>

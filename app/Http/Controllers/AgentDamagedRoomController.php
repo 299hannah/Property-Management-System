@@ -7,11 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AgentDamagedRoomController extends Controller
 {
-               /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('agent');
@@ -20,7 +15,7 @@ class AgentDamagedRoomController extends Controller
     {
 
     $damagedrooms  = DamagedRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->get();
-        return view('agent.damagedrooms.index')->with('damagedrooms', $damagedrooms);
+    return view('agent.damagedrooms.index')->with('damagedrooms', $damagedrooms);
     }
 
     public function create()

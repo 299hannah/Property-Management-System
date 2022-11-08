@@ -15,6 +15,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Profile') }}</div>
                     <div class="card-body">
+                @if(Session::has(''))@endif
                         @if ($agent->image)
                         <img src="{{ asset('images/profiles') }}/{{ $agent->image }}" width="130px" height="130px" alt="" />
                         @else
@@ -25,11 +26,12 @@
                             <p>Email: <b>{{ $agent->email }}</b></p>
                             <p>Phone: <b>{{ $agent->phone }}</b></p>
                         </div>
-                        <a href="{{ url('agent/profile/editprofile/' . $agent->id) }}" class="btn btn-info">update </a>
+                        <a href="{{ url('agent/profile/editprofile/' . $agent->id) }}" class="btn btn-info">Edit </a>
                     </div>
             </div>
         </div>
     </div>
+</div>
 </section>
     </div>
 @endsection

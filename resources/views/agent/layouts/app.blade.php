@@ -8,12 +8,9 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         @include('agent.layouts.header')
-
         @section('main-content')
              @show      
-
     </div>
-
     <script>
         //toastr notifications
         setTimeout(function() {
@@ -43,9 +40,9 @@
         }, 800);
     </script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+
 </body>
 @include('agent.layouts.footer')
-
 </html>
 

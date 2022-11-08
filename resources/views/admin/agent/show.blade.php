@@ -93,28 +93,9 @@
 
 
               </tbody>
-              <tfoot>
-
-                <tr>
-                  <th>S.Name</th>
-                  <th>user Name</th>
-                  <th>Status</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </tfoot>
             </table>
-          <!-- /.card-body -->
-        {{-- </div> --}}
       </div>
-     
-      <!-- /.card-footer-->
     </div>
-    <!-- /.card -->
-
   </section>
-  <!-- /.content -->
 </div>
-
-
 @endsection
