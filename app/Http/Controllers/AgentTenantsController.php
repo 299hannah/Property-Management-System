@@ -67,7 +67,9 @@ class AgentTenantsController extends Controller
         $request->status? : $request['status']=0;
         $tenant = Tenant::where('id',$id)->update($request->except('_token','_method','post'));
         Tenant::find($id)->posts()->sync($request->post);
-    return redirect('agent/tenants')->with('message', 'tenant Updated!');
+    // return redirect('agent/tenants')->with('message', 'tenant Updated!');
+    session()->flash('success', 'Updated successfully');
+    return redirect('agent/tenants');
     }
 
     public function destroy($id)

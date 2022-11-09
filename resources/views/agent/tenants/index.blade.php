@@ -24,7 +24,6 @@
               <i class="fa fa-plus" aria-hidden="true"></i> Add New
           </a>          
           </div>
-          <!-- /.card-header -->
           <div class="card-body">
             <table id="example" class="table table-bordered table-striped">
                 <thead>
@@ -33,7 +32,6 @@
                         <th>Name</th>
                         <th>House Number</th>
                         <th>Status</th>
-                        {{-- <th>Post Id</th> --}}
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -43,10 +41,7 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->houseno }}</td>
-                        <td>
-                          {{ $item->status? 'active':'inactive' }}
-                       </td>
-                        {{-- <td>{{ $item->post_id }}</td> --}}
+                        <td>{{ $item->status? 'active':'inactive' }}</td>
                         <td>
                             <a href="{{ url('agent/tenants/show/' . $item->id )}}" title="View tenant"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                             <a href="{{ url('agent/tenants/edit/' . $item->id )}}" title="Edit tenant"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

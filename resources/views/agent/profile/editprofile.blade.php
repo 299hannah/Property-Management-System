@@ -6,7 +6,6 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-md-5 mx-auto mt-lg-5 text-center">
                 <p class="mb-5"><strong class="text-white">Welcome</strong></p>
-
             </div>
         </div>
     </div>
@@ -20,11 +19,10 @@
                 <div class="card">
                     <div class="card-header">{{ __('Update Profile') }}</div>
                     <div class="card-body">
-                        @if(Session::has(''))@endif
-                        <form action="{{ url('agent/profile/update/'. $agent->id) }}" method="POST">
+                        {{-- @if(Session::has(''))@endif --}}
+                        <form action="{{ url('agent/profile/update/' . $agent->id) }}" method="POST">
                             @csrf
                             <div class="row" class="col-md-12">
-                                <div class="">
                                     @if ($agent->image)
                                     <img src="{{ asset('images/profiles') }}/{{ $agent->image }}" width="30px" height="30px" alt=""/>
                                     @elseif($agent->image)
@@ -36,9 +34,7 @@
                                         <p>Name: <b><input type="text" class="form-control" name="name" value="{{ $agent->name }}"></b></p>
                                         <p>Email: <b><input type="text" class="form-control"  name="email"  value="{{ $agent->email }}"></b></p>
                                         <p>Phone: <b><input type="text" class="form-control"   name="phone"  value="{{ $agent->phone }}"></b></p>
-                                        {{-- <a href="{{ route('profile.index') }}" class=" submit btn btn-info">update </a> --}}
-                                <button type="submit" class="btn btn-info pull-right">Update</button>
-                                    </div>
+                                        <button type="submit" class="btn btn-info pull-right">Update</button>
                                 </div>
                             </div>
                         </form>

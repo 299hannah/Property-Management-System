@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Profile') }}</div>
                     <div class="card-body">
-                @if(Session::has(''))@endif
+                       @if(Session::has(''))@endif
                         @if ($agent->image)
                         <img src="{{ asset('images/profiles') }}/{{ $agent->image }}" width="130px" height="130px" alt="" />
                         @else

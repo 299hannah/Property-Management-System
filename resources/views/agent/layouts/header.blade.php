@@ -53,7 +53,7 @@
                             <a href="{{ url('agent/profile/index') }}" class="btn btn-default btn-flat">Profile</a>                    
                      </div>
                      <div class="dropdown-divider"></div>
-                     <div class="dropdown-item btn btn-default pull-right">
+                     <div class="dropdown-item btn btn-default">
                          <a href="{{ route('agent.logout') }}" class="btn btn-default btn-flat">Logout</a>
                      </div>
              </div>

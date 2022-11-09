@@ -18,14 +18,18 @@
                 <b><p class="text-center">Payment Breakdown</p></b>
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
+                        <button type="button" class="btn btn-success paybtn" data-toggle="modal" data-target="#modal-default">
                             Make Payment
                         </button>
                         <br>
                         <div class="modal fade" id="modal-default">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">  
+                                    <div class="modal-header">
+                                    <h4 class="modal-title">Make Payment</h4>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
                                     </div>
                                     <div class="modal-body">
                                         <section class="content-header">
@@ -71,7 +75,7 @@
                                                                     <option name="religion3">May</option>
                                                                     <option name="religion3">June</option>
                                                                     <option name="religion3">July</option>
-                                                                    <option name="religion3">August</option`>
+                                                                    <option name="religion3">August</option>
                                                                     <option name="religion3">September</option>
                                                                     <option name="religion3">October</option>
                                                                     <option name="religion3">November</option>
@@ -87,6 +91,9 @@
                                                             <div class="col">
                                                                 <label> Date Paid</label>
                                                                 <input type="date" id="datepaid" name="datepaid" class="for-control">
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="hidden" class="form-control" id="hiddenpostid" name="post_id">
                                                             </div>
 
                                                         </div>
@@ -112,7 +119,7 @@
                                 <th>Expected Amount</th>
                                 <th>Amount Paid</th>
                                 <th>Balance</th>
-                                <th>Post_id</th>
+                                {{-- <th>Post_id</th> --}}
 
                             </tr>
                         </thead>
@@ -127,7 +134,7 @@
                                <td>{{ $item->expectedamount }}</td>
                                <td>{{ $item->amountpaid }}</td>
                                <td>{{ $item->balance }}</td>
-                               <td>{{ $item->post_id }}</td>
+                               {{-- <td>{{ $item->post_id }}</td> --}}
                          </tr>
                     @endforeach
                    </tbody> 
