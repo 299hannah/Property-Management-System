@@ -46,17 +46,18 @@
              <a class="nav-link" data-toggle="dropdown" href="#">
                  <i class="far fa-user"></i>
              </a>
-             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                 <a href="" class="media-body">
+                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                   <a href="" class="media-body">
                      <!-- Menu Footer-->
                      <div class=" dropdown-item">
-                            <a href="{{ url('agent/profile/index') }}" class="btn btn-default btn-flat">Profile</a>                    
+                        <a href="{{ url('agent/profile/index') }}" class="btn btn-default btn-flat">Profile</a>                    
                      </div>
                      <div class="dropdown-divider"></div>
                      <div class="dropdown-item btn btn-default">
                          <a href="{{ route('agent.logout') }}" class="btn btn-default btn-flat">Logout</a>
                      </div>
-             </div>
+                   </a>
+                </div>
              </a>
          </li>
          </div>

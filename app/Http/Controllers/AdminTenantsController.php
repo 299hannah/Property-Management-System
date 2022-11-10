@@ -75,7 +75,8 @@ class AdminTenantsController extends Controller
         $request->status ?: $request['status'] = 0;
         $tenant = Tenant::where('id', $id)->update($request->except('_token', '_method', 'post'));
         Tenant::find($id)->posts()->sync($request->post);
-        return redirect('admin/tenants')->with('message', 'tenant Updated!');
+        session()->flash('success', 'Updated successfully');
+        return redirect('admin/tenants');
     }
 
     public function destroy($id)

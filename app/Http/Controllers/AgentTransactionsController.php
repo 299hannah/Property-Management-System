@@ -38,8 +38,8 @@ class AgentTransactionsController extends Controller
     public function edit($id)
     {
         $transaction = Transactions::find($id);
-        $months = Transactions::pluck('January','February','March','April','May','June','July','August','September','October','November','December');
-        return view('agent.transactions.edit', compact('transaction','months'));
+        // $months = Transactions::pluck('January','February','March','April','May','June','July','August','September','October','November','December');
+        return view('agent.transactions.edit', compact('transaction'));
     }
     public function update(Request $request, $id)
     {

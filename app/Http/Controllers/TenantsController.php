@@ -37,7 +37,6 @@ class TenantsController extends Controller
     {
         $input = $request->all();
         Transactions::create($input);
-
         session()->flash('success', 'Payment successfull');
         return redirect('home');
     }
@@ -59,7 +58,8 @@ class TenantsController extends Controller
         $transaction = Transactions::find($id);
         $input = $request->all();
         $transaction->update($input);
-        return redirect('agent/transactions')->with('flash message', 'transaction Updated!');
+        session()->flash('Updated Successfully');
+        return redirect('agent/transactions');
     }
 
     public function destroy($id)

@@ -3,30 +3,28 @@
 namespace App\Http\Controllers\Agent;
 use App\Models\Agent;
 use Illuminate\Support\Facades\Auth;
-use App\Models\profagent;
-
+// use App\Models\Agent;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\File;
-
 class ProfController extends Controller
 {
     public function index(){
-        $profagent = profagent::where('agent_id',Auth::guard('agent')->user()->id)->first();
+        $profagent = Agent::where('post_id',Auth::guard('agent')->user()->id)->first();
         if(!$profagent)
         {
-            $profagent = new profagent();
-            $profagent->agent_id = Auth::guard('agent')->user()->id;
+            $Agent = new Agent();
+            $Agent->post_id = Auth::guard('agent')->user()->id;
             // $input = $request->all();
             // dd($request->all());
-            $profagent->save();   
+            $Agent->save();   
         }
         $agent=Agent::find(Auth::guard('agent')->user()->id);
         return view('agent.profile.index',compact('agent'));
     }
     public function edit($id)
     {
-        $agent = profagent::where('agent_id',Auth::guard('agent')->user()->id)->first();
+        $agent = Agent::where('post_id',Auth::guard('agent')->user()->id)->first();
         return view('agent.profile.editprofile',compact('agent'));
     }
     public function update(Request $request)
@@ -36,11 +34,11 @@ class ProfController extends Controller
                 'email' => ['string'],
                 'phone' => 'numeric',
             ]);
-            $profagent = profagent::where('agent_id',Auth::guard('agent')->user()->id)->first();
-            if(!$profagent)
+            $Agent = Agent::where('post_id',Auth::guard('agent')->user()->id)->first();
+            if(!$Agent)
             {
-                $profagent = profagent::find('agent_id',Auth::guard('agent')->user()->id);
-                // $profagent = profagent::find($id);
+                $Agent = Agent::find('post_id',Auth::guard('agent')->user()->id);
+                // $Agent = Agent::find($id);
                    if ($request->hasfile('image')) {
                     $destination = unlink('images/profiles/' . $this->image);
                     if (File::exists($destination)) {
@@ -49,17 +47,17 @@ class ProfController extends Controller
                     $file = $request->file('image');
                     $filename = time() . '.' . $file->getClientOriginalExtension();
                     $file->move('images/agent', $filename);
-                    $profagent->image = $filename;
+                    $Agent->image = $filename;
                     } 
-                $profagent->name = $request->name;
-                $profagent->email = $request->email;
-                $profagent->phone = $request->phone;
-                $profagent->agent_id = Auth::guard('agent')->user()->id;
+                // $Agent->name = $request->name;
+                // $Agent->email = $request->email;
+                // $Agent->phone = $request->phone;
+                // $Agent->post_id = Auth::guard('agent')->user()->id;
                 $input = $request->all();
                 // dd($request->all());
-                $profagent->save();   
+                $Agent->save();   
             }
-            session()->flash('success', 'Payment successfully');
+            session()->flash('success', 'Profile Updated successfully');
             $agent=Agent::find(Auth::guard('agent')->user()->id); 
             return view('agent.profile.index',compact('agent'));   
     }

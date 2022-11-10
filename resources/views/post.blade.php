@@ -1,10 +1,7 @@
 @extends('user.layouts.app')
 @section('bg-img3', asset('images/post/' . $post->image))
 {{-- @section('bg-img3', asset('user/images/hero_1.jpg')) --}}
-
-
 @section('main-content')
-
 <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(@yield('bg-img3')" data-aos="fade">
     <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -15,12 +12,8 @@
             </div>
         </div>
     </div>
-
     <a href="#property-details" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
 </div>
-
-
-
 <div class="site-section" id="property-details">
     <div class="site-section" id="property-details">
         <div class="container">
@@ -30,11 +23,10 @@
                         <div><img src="{{ asset('images/post/' . $post->image) }}" alt="Image" class="img-fluid"></div>
                         <div><img src="{{ asset('images/post/' . $post->image) }}" alt="Image" class="img-fluid"></div>
                         <div><img src="{{ asset('images/post/' . $post->image) }}" alt="Image" class="img-fluid"></div>
-                        <div><img src="{{ asset('user/images/property_1.jpg') }}" alt="Image" class="img-fluid">
+                        <div><img src="{{ asset('user/images/property_1.jpg') }}" alt="Image" class="img-fluid"></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-5 pl-lg-5 ml-auto">
+             <div class="col-lg-5 pl-lg-5 ml-auto">
                 <div class="mb-5">
                     <h3 class="text-black mb-4">Property Details</h3>
                     <p>{!! htmlspecialchars_decode($post->body) !!}</p>
@@ -53,7 +45,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+         </div>
     </div>
+</div>
 </div>
 @endsection

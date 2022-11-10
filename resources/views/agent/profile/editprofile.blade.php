@@ -17,10 +17,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="card">
-                    <div class="card-header">{{ __('Update Profile') }}</div>
+                    {{-- <div class="card-header">{{ __('Update Profile') }}</div> --}}
                     <div class="card-body">
                         {{-- @if(Session::has(''))@endif --}}
-                        <form action="{{ url('agent/profile/update/' . $agent->id) }}" method="POST">
+                        <form action="{{ url('agent/profile/update/' . $agent->id) }}" method="post">
                             @csrf
                             <div class="row" class="col-md-12">
                                     @if ($agent->image)
@@ -35,7 +35,7 @@
                                         <p>Email: <b><input type="text" class="form-control"  name="email"  value="{{ $agent->email }}"></b></p>
                                         <p>Phone: <b><input type="text" class="form-control"   name="phone"  value="{{ $agent->phone }}"></b></p>
                                         <button type="submit" class="btn btn-info pull-right">Update</button>
-                                </div>
+                                    </div>
                             </div>
                         </form>
                     </div>

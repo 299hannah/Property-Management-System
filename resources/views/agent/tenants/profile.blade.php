@@ -18,26 +18,24 @@
                 {{-- {{ Session::get('post_id') }} --}}
 
                     <div class="card-body">
-        <div class="col-md-4">
-     @if ($tenant->profile->image)
-     <img src="{{ asset('images/profiles') }}/{{ $tenant->profile->image }}"  width="100%" alt=""/>
-     @else
-     <img src="{{ asset('images/profiles/dummy.jpg') }}"  width="100%" alt=""/>
-
-         
-     @endif
+                             <div class="col-md-4">
+                                   @if ($tenant->profile->image)
+                                     <img src="{{ asset('images/profiles') }}/{{ $tenant->profile->image }}"  width="100%" alt=""/>
+                                   @else
+                                     <img src="{{ asset('images/profiles/dummy.jpg') }}"  width="100%" alt=""/>
+                                   @endif
                     
-        </div>
-        <div class="col-md-8">
-            <p>Name:   <b>{{ $tenant->name }}</b></p>
-            <p>House Number: <b>{{ $tenant->houseno}}</b></p>
-            <p>Email:  <b>{{ $tenant->email }}</b></p>
-            <p>Phone:  <b>{{ $tenant->phoneno }}</b></p>
-            <p>Post Id: <b>{{ $tenant->post_id }}</b></p>
-            {{-- <p>Post Id: <b>{{ $tenant->post_id }}</b></p> --}}
-        </div>
-
-                </div>
+                              </div>
+                            <div class="col-md-8">
+                                <p>Name:   <b>{{ $tenant->name }}</b></p>
+                                <p>House Number: <b>{{ $tenant->houseno}}</b></p>
+                                <p>Email:  <b>{{ $tenant->email }}</b></p>
+                                {{-- <p>Phone:  <b>{{ $tenant->phoneno }}</b></p> --}}
+                                {{-- <p>Post Id: <b>{{ $tenant->post_id }}</b></p> --}}
+                                {{-- <p>Post Id: <b>{{ $tenant->post_id }}</b></p> --}}
+                            </div>
+                    </div>
             </div>
         </div>
+    </div>
     @endsection

@@ -51,7 +51,7 @@ Route::prefix('admin')->namespace('App\Http\Controllers\Admin')->group( function
 
 });
 
-Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function (){
+Route::prefix('agent')->namespace('App\Http\Controllers\Agent')->group( function () {
 
     Route::get('/dashboard','AgentController@AgentDashboard')->name('agent.dashboard')->middleware('agent');
     Route::get('/login','Auth\LoginController@showLoginForm')->name('agent.login');

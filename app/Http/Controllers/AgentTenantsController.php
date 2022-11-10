@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Tenant;
 use App\Models\post;
@@ -17,8 +16,9 @@ class AgentTenantsController extends Controller
     }
     public function index()
     {
-    $tenants = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get();    
-    return view('agent.tenants.index',compact('tenants'));
+    $tenants = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get(); 
+    // $tenants = Tenant::all();   
+    return view('agent.tenants.index' , compact('tenants'));
     }
     public function create()
     {
@@ -34,21 +34,24 @@ class AgentTenantsController extends Controller
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
             'idno' => 'required|numeric',
+            // 'post_id' => 'required|exists:posts,id',
         ]);
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
-        // dd($request->all());
+        dd($request->all());
         $tenant ->posts()->sync($request->posts);    
-        $tenant->save(); 
+        // $tenant->save(); 
          session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
     public function show($id )
     {
     $tenants = Tenant::find($id);
-    $transactions = Transactions::all();
-        return view('agent.tenants.show', compact('tenants','transactions'));
+    // $transactions = Transactions::all();
+    $transactions = Transactions::where('post_id',Auth::guard('agent')->user()->id)->first();
+    // $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+    return view('agent.tenants.show', compact('tenants','transactions'));
     }
     public function edit($id)
     {

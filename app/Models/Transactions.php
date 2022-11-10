@@ -9,7 +9,7 @@ class Transactions extends Model
 {
     protected $table = 'transactions';
     protected $primarykey = 'id';
-    protected $fillable = ['name','houseno','billingfor','expectedamount','amountpaid','balance','datepaid','room_id'];
+    protected $fillable = ['name','houseno','billingfor','expectedamount','amountpaid','balance','datepaid','post_id'];
 
 //$totalCredits = Model::where('type', 'credit')->sum('balance');
 // Debits

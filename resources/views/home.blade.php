@@ -30,6 +30,7 @@
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
+                                  {{-- close icon * --}}
                                     </div>
                                     <div class="modal-body">
                                         <section class="content-header">
@@ -95,7 +96,6 @@
                                                             <div class="col">
                                                                 <input type="hidden" class="form-control" id="hiddenpostid" name="post_id">
                                                             </div>
-
                                                         </div>
                                                         <div style="text-align:center;">
                                                             <button type="submit" class="btn btn-success center" name="submit">Save</button>
@@ -137,6 +137,17 @@
                                {{-- <td>{{ $item->post_id }}</td> --}}
                          </tr>
                     @endforeach
+
+                    <script>
+                        $(document).ready(function() {
+                            $('.paybtn').click(function() {
+                                var row = $(this).closest('tr');
+                                var exp = row.find('#post_id').text();
+                                $('#hiddenpostid').val(exp);
+                                console.log(exp);
+                            });
+                        });
+                    </script>
                    </tbody> 
                 </table>
                 </div>

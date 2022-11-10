@@ -31,7 +31,7 @@ class AgentController extends Controller
     }
 
     public function AgentDashboard(){      
-        $agents = Agent::where('post_id', session('post_id')); 
+        // $agents = Agent::where('post_id', session('post_id')); 
         
         $users = User::whereHas('categories', function($query) {
             $query->where('name', 'categories');
@@ -41,7 +41,7 @@ class AgentController extends Controller
         $vacantrooms  = VacantRoom::where('post_id',optional(Auth::guard('agent')->user())->id)->count();
         $rooms = $tenants + $damagedrooms + $vacantrooms ;
 
-            return  view('agent.home',compact('agents','tenants','rooms','damagedrooms','vacantrooms'));
+            return  view('agent.home',compact('tenants','rooms','damagedrooms','vacantrooms'));
         }
         
     public function AgentLogout(){
