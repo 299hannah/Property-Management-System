@@ -23,7 +23,7 @@
                         <form action="{{ url('agent/profile/update/' . $agent->id) }}" method="post">
                             @csrf
                             <div class="row" class="col-md-12">
-                                    @if ($agent->image)
+                                    @if ($agent->image) 
                                     <img src="{{ asset('images/profiles') }}/{{ $agent->image }}" width="30px" height="30px" alt=""/>
                                     @elseif($agent->image)
                                     @else

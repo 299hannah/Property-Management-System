@@ -17,7 +17,7 @@ class ProfController extends Controller
             $Agent->post_id = Auth::guard('agent')->user()->id;
             // $input = $request->all();
             // dd($request->all());
-            $Agent->save();   
+            // $Agent->save();   
         }
         $agent=Agent::find(Auth::guard('agent')->user()->id);
         return view('agent.profile.index',compact('agent'));
@@ -53,9 +53,9 @@ class ProfController extends Controller
                 // $Agent->email = $request->email;
                 // $Agent->phone = $request->phone;
                 // $Agent->post_id = Auth::guard('agent')->user()->id;
-                $input = $request->all();
-                // dd($request->all());
-                $Agent->save();   
+                // $input = $request->all();
+                dd($request->all());
+                // $Agent->save();   
             }
             session()->flash('success', 'Profile Updated successfully');
             $agent=Agent::find(Auth::guard('agent')->user()->id); 

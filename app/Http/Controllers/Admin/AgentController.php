@@ -67,7 +67,7 @@ class AgentController extends Controller
         // $agent ->categories()->sync($request->categories);
         // $agent ->posts()->sync($request->post);
 
-
+        session()->flash('success', 'Added successfully');
         return redirect(route('agent.index'));
     }
     public function show($id)

@@ -16,6 +16,8 @@ use App\Http\Controllers\AgentTransactionsController;
 use App\Http\Controllers\AdminTransactionsController;
 use App\Http\Controllers\TenantProfileController;
 use App\Http\Controllers\TenantsController;
+use App\Http\Controllers\ProfController;
+
 
 
 /*
@@ -72,6 +74,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('web');
 Route::get('admin/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin/home');
+
+
+// Route::get('agent/profile/index', [App\Http\Controllers\Agent\ProfController::class, 'index'])->name('agent/profile/index');
+// Route::get('agent/profile/edit/{id}', [App\Http\Controllers\Agent\ProfController::class, 'editprofile'])->name('agent/profile/edit');
+// Route::post('agent/profile/update/{id}', [App\Http\Controllers\Agent\ProfController::class, 'update']);
+
+
 
 Route::resource('admin/tenants/', AdminTenantsController::class);
 Route::get('admin/tenants/create', [AdminTenantsController::class, 'create']);
