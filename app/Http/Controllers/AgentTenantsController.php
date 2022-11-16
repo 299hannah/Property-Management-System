@@ -17,7 +17,6 @@ class AgentTenantsController extends Controller
     public function index()
     {
     $tenants = Tenant::where('post_id',optional(Auth::guard('agent')->user())->id)->get(); 
-    // $tenants = Tenant::all();   
     return view('agent.tenants.index' , compact('tenants'));
     }
     public function create()
@@ -48,8 +47,8 @@ class AgentTenantsController extends Controller
     public function show($id )
     {
     $tenants = Tenant::find($id);
-    // $transactions = Transactions::all();
-    $transactions = Transactions::where('post_id',Auth::guard('agent')->user()->id)->first();
+    $transactions = Transactions::all();
+    // $transactions = Transactions::where('post_id',Auth::guard('agent')->user()->id)->first();
     // $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
     return view('agent.tenants.show', compact('tenants','transactions'));
     }

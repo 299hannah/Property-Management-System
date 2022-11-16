@@ -17,7 +17,7 @@ class ProfController extends Controller
             $Agent->post_id = Auth::guard('agent')->user()->id;
             // $input = $request->all();
             // dd($request->all());
-            // $Agent->save();   
+            $Agent->save();   
         }
         $agent=Agent::find(Auth::guard('agent')->user()->id);
         return view('agent.profile.index',compact('agent'));
@@ -34,29 +34,28 @@ class ProfController extends Controller
                 'email' => ['string'],
                 'phone' => 'numeric',
             ]);
-            $Agent = Agent::where('post_id',Auth::guard('agent')->user()->id)->first();
-            if(!$Agent)
-            {
-                $Agent = Agent::find('post_id',Auth::guard('agent')->user()->id);
-                // $Agent = Agent::find($id);
-                   if ($request->hasfile('image')) {
-                    $destination = unlink('images/profiles/' . $this->image);
-                    if (File::exists($destination)) {
-                        File::delete($destination);
-                    }
-                    $file = $request->file('image');
-                    $filename = time() . '.' . $file->getClientOriginalExtension();
-                    $file->move('images/agent', $filename);
-                    $Agent->image = $filename;
-                    } 
-                // $Agent->name = $request->name;
-                // $Agent->email = $request->email;
-                // $Agent->phone = $request->phone;
+            // $Agent = Agent::where('post_id',Auth::guard('agent')->user()->id)->first();
+            // if(!$Agent)
+            // {
+            //     $Agent = Agent::find('post_id',Auth::guard('agent')->user()->id);
+            //     $Agent = Agent::find($id);
+            //        if ($request->hasfile('image')) {
+            //         $destination = unlink('images/profiles/' . $this->image);
+            //         if (File::exists($destination)) {
+            //             File::delete($destination);
+            //         }
+            //         $file = $request->file('image');
+            //         $filename = time() . '.' . $file->getClientOriginalExtension();
+            //         $file->move('images/agent', $filename);
+            //         $Agent->image = $filename;
+            //         }             
                 // $Agent->post_id = Auth::guard('agent')->user()->id;
                 // $input = $request->all();
-                dd($request->all());
+                // dd($request->all());
                 // $Agent->save();   
-            }
+            // }
+            // $request->all();
+            $input = $request->all();
             session()->flash('success', 'Profile Updated successfully');
             $agent=Agent::find(Auth::guard('agent')->user()->id); 
             return view('agent.profile.index',compact('agent'));   
