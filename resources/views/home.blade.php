@@ -105,6 +105,8 @@
                                                                 @endphp
                                                                 {{-- <input type="hidden" class="form-control" id="hiddenpostid" name="post_id"> --}}
                                                                 @foreach ($tenants as $tenant )
+
+                                                                
                                                                 <input type="hidden" name="post_id" id="hiddenpostid" value="{{ $tenant->post_id }}" class="form-control"><br>
                                                                 @endforeach
                                                             </div>
