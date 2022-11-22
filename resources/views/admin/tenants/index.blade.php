@@ -18,7 +18,6 @@
 @section('main-content')
         <div class="content-wrapper">
           <section class="content-header">
-        
         <div class="card">
           <div class="card-header">
             <a href="{{ url('admin/tenants/create') }}" class="btn btn-success btn-sm" title="Add New Tenant">
@@ -41,7 +40,7 @@
                 <tbody>
                 @foreach($tenants as $item)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td class="dtr-control sorting_1" tabindex="0">{{ $loop->iteration }}</td>
                         <td>{{ $item->name }}</td>
                         <td>{{ $item->houseno }}</td>
                         <td>

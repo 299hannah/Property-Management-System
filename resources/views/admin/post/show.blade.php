@@ -92,7 +92,7 @@
 
 
                         </tbody>
-                        <tfoot>
+                        {{-- <tfoot>
 
                             <tr class="odd">
                                 <th>S.Name</th>
@@ -104,7 +104,7 @@
                                 <th>Delete</th>
 
                             </tr>
-                        </tfoot>
+                        </tfoot> --}}
                     </table>
                 </div>
                 <!-- /.card-body -->

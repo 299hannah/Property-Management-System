@@ -38,9 +38,9 @@ class AgentTenantsController extends Controller
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
-        dd($request->all());
+        // dd($request->all());
         $tenant ->posts()->sync($request->posts);    
-        // $tenant->save(); 
+        $tenant->save(); 
          session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
