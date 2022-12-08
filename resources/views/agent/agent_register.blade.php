@@ -4,14 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agent| Registration</title>
-
-   <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="https:'//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-   <!-- Font Awesome -->
    <link rel="stylesheet" href="{{ asset('admin/plugins/fontawesome-free/css/all.min.css') }}">
-   <!-- icheck bootstrap -->
    <link rel="stylesheet" href="{{ asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-   <!-- Theme style -->
    <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css') }}">
 </head>
 <body class="hold-transition register-page">
@@ -19,7 +14,6 @@
   <div class="register-logo">
     <a href="../../index2.html"><b>Agent</b>Register</a>
   </div>
-
   <div class="card">
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register agent</p>
@@ -40,8 +34,6 @@
   @endif
       <form action="{{ route('agent.register.create') }}" method="POST">
         {{ csrf_field() }}
-         
-
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="name" placeholder="Full name" value="{{ old('name') }}" required>
           <div class="input-group-append">
@@ -90,14 +82,13 @@
           </div>
         </div>
       </form>
-
       <div class="social-auth-links text-center">
         <p>- OR -</p>
         <a href="{{ url('agent/login') }}" class="btn btn-block btn-info">
           Login
       </a>
     </div>
-  </div><!-- /.card -->
+  </div>
 </div>
 <script src="{{ asset('admin/plugins/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

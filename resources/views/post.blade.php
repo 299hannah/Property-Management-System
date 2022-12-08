@@ -8,7 +8,6 @@
             <div class="col-md-5 mx-auto mt-lg-5 text-center">
                 <h1>{{ $post->title }}</h1>
                 <p class="mb-5"><strong class="text-white">$2,000,000</strong></p>
-
             </div>
         </div>
     </div>

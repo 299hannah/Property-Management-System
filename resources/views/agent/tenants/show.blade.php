@@ -41,9 +41,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @php
-                                $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
-                            @endphp --}}
                                @foreach ($transactions as $item )
                                   <tr>
                                        {{-- <td>{{ $item->loop }}</td> --}}

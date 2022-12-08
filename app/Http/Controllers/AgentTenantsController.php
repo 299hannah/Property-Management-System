@@ -25,7 +25,8 @@ class AgentTenantsController extends Controller
         return view('agent.tenants.create',compact('posts'));
     }
     public function store(Request $request)
-    {   
+    {  
+        $agent = DB::table('agents')->where('post_id', Auth::user()->post_id)->get();
         $this->validate($request,[
             'name' => ['required', 'string', 'max:50'],
             'email' => ['required', 'string', 'email', 'max:255'],
@@ -33,23 +34,23 @@ class AgentTenantsController extends Controller
             'phoneno' => 'required|numeric',
             'houseno' => ['required', 'string'],
             'idno' => 'required|numeric',
-            // 'post_id' => 'required|exists:posts,id',
+            'post_id' => 'required|exists:posts,id',
         ]);
+        $request['post_id'] = $agent;
         $request['password'] = bcrypt($request->password);
         $tenant = new tenant;
         $tenant =tenant::create($request->all());
-        // dd($request->all());
+        dd($request->all());
         $tenant ->posts()->sync($request->posts);    
-        $tenant->save(); 
+        // $tenant->save(); 
          session()->flash('success', 'Added successfully');
         return redirect('agent/tenants');
     }
-    public function show($id )
+    public function show($houseno)
     {
-    $tenants = Tenant::find($id);
-    $transactions = Transactions::all();
-    // $transactions = Transactions::where('post_id',Auth::guard('agent')->user()->id)->first();
+    $tenants = Tenant::find($houseno);
     // $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
+    $transactions = Transactions::all();
     return view('agent.tenants.show', compact('tenants','transactions'));
     }
     public function edit($id)

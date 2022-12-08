@@ -1,5 +1,4 @@
 @extends('agent.layouts.app')
-{{-- @extends('vacantrooms.layout') --}}
 @section('main-content')
     <div class="content-wrapper">
         <section class="content-header">
@@ -19,7 +18,6 @@
                             <option name="fellowship2">Vacant</option>
                             <option name="fellowship2">Damaged</option>
                         </select><br>
-                        
                         <br><button type="submit" class="btn btn-success center" name="submit">Save</button>
                     </form>
                 </div>

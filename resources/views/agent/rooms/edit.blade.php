@@ -7,7 +7,6 @@
                 <div class="card-body">
                     <form action="{{ url('agent/rooms/update/' . $rooms->id) }}" method="post">
                         {!! csrf_field() !!}
-                        {{-- @method('PATCH') --}}
                         <input type="hidden" name="id" id="id" value="{{ $rooms->id }}" id="id">
                         <label>House Number</label>
                         <input type="text" name="houseno" id="houseno" value="{{ $rooms->houseno }}"

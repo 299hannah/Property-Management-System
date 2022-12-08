@@ -54,32 +54,23 @@
                                         @if (old('status') == 3) checked @endif value="3">Status</label>
                             </div>
                         </div>
-                        {{-- <div class="row">
-                            @foreach ($posts as $post)
-                                <div class="col-sm-1">
-                                    <div class="checkbox">
-                                        <label for=""><input type="checkbox" name="post_id" value="{{ $post->id }}">{{ $post->title }}</label>
-                                    </div>
-                                </div>
+                        <div class="col">
+                            <label>Post Id</label>
+                        </div>
+                        <div class="row">
+                            @php
+                                $agents = DB::table('agents')->where('name', Auth::user()->name)->get();
+                            @endphp
+                            @foreach ($agents as $agent)
+                                <input type="text" name="post_id" value="{{ $agent->post_id }}" class="form-control">                                
                             @endforeach
-                        </div> --}}
+                        </div>
                         <div style="text-align:center;">
                             <button type="submit" class="btn btn-success center" name="submit">Save</button>
                         </div>
                     </form>
-                    <script>
-                        $(document).ready(function() {
-                            $('.paybtn').click(function() {
-                                var row = $(this).closest('tr');
-                                var exp = row.find('#expensename').text();
-                                $('#hiddenexp').val(exp);
-                                console.log(exp);
-                            });
-                        });
-                    </script>
                 </div>
             </div>
-
         </section>
     </div>
 @stop

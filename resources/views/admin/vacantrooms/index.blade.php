@@ -31,7 +31,7 @@
                                 <th>#</th>
                                 <th>House Number</th>
                                 <th>Floor</th>
-                                <th>Post Id</th>
+                                <th>Post Name</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -42,12 +42,17 @@
                                     <td>{{ $item->houseno }}</td>
                                     <td>{{ $item->floor }}</td>
                                     <td>{{ $item->post_id }}</td>
+
+                            @endforeach
+                            @foreach ($posts as $post)
+                            <td>{{ $post->title }}</td>
+
+                                    {{-- <td>{{ $item->title }}</td> --}}
                                     <td>
                                         <a href="{{ url('admin/vacantrooms/edit/' . $item->id) }}" title="Edit vacant room"><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modal-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-                                        <form method="POST" action="{{ url('admin/vacantrooms' . '/' . $item->id) }}"
-                                            accept-charset="UTF-8" style="display:inline">
+                                        <form method="POST" action="{{ url('admin/vacantrooms' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger btn-sm" title="Delete vacant room" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" title="Delete vacant room" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                         </form>
                                     </td>
                                 </tr>

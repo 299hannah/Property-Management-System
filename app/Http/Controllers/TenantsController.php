@@ -37,34 +37,35 @@ class TenantsController extends Controller
     {
         $input = $request->all();
         Transactions::create($input);
+        // dd($request->all());
         session()->flash('success', 'Payment successfull');
         return redirect('home');
     }
 
-    public function show($id)
-    {
-        $transaction = Transactions::find($id);
-        return view('agent.transactions.show')->with('transactions', $transaction);
-    }
+    // public function show($id)
+    // {
+    //     $transaction = Transactions::find($id);
+    //     return view('agent.transactions.show')->with('transactions', $transaction);
+    // }
 
-    public function edit($id)
-    {
-        $transaction = Transactions::find($id);
-        return view('agent.transactions.edit')->with('transactions', $transaction);
-    }
+    // public function edit($id)
+    // {
+    //     $transaction = Transactions::find($id);
+    //     return view('agent.transactions.edit')->with('transactions', $transaction);
+    // }
 
-    public function update(Request $request, $id)
-    {
-        $transaction = Transactions::find($id);
-        $input = $request->all();
-        $transaction->update($input);
-        session()->flash('Updated Successfully');
-        return redirect('agent/transactions');
-    }
+    // public function update(Request $request, $id)
+    // {
+    //     $transaction = Transactions::find($id);
+    //     $input = $request->all();
+    //     $transaction->update($input);
+    //     session()->flash('Updated Successfully');
+    //     return redirect('agent/transactions');
+    // }
 
-    public function destroy($id)
-    {
-        Transactions::destroy($id);
-        return redirect('agent/transactions')->with('flash message', 'transaction deleted!');
-    }
+    // public function destroy($id)
+    // {
+    //     Transactions::destroy($id);
+    //     return redirect('agent/transactions')->with('flash message', 'transaction deleted!');
+    // }
 }

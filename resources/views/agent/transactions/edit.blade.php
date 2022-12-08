@@ -35,11 +35,6 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
-                                <label>Billing For</label><br> 
-                                {{-- <input class="form-control" for="inputbillingfor" name="billingfor" value="{{ $transaction->billingfor }}"> --}}
-                               <select name="" id="billingfor" class="form-control"></select> 
-                            </div>
-                            <div class="col">
                                 <label>Balance</label><br>
                                 <input type="text" name="balance" id="balance" value="{{ $transaction->balance }}" class="form-control"><br>
                             </div>

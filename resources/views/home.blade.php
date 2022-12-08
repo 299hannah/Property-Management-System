@@ -20,8 +20,7 @@
                 </b>
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-success paybtn" data-toggle="modal"
-                            data-target="#modal-default">
+                        <button type="button" class="btn btn-success paybtn" data-toggle="modal" data-target="#modal-default">
                             Make Payment
                         </button>
                         <br>
@@ -33,7 +32,6 @@
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
-                                        {{-- close icon * --}}
                                     </div>
                                     <div class="modal-body">
                                         <section class="content-header">
@@ -45,33 +43,28 @@
                                                         <div class="row mb-3">
                                                             <div class="col">
                                                                 <label>Name</label><br>
-                                                                <input type="text" name="name" id="name"
-                                                                    class="form-control" required><br>
+                                                                <input type="text" name="name" id="name" class="form-control" required><br>
                                                             </div>
                                                             <div class="col">
                                                                 <label>Expected Amount</label><br>
-                                                                <input type="text" name="expectedamount"
-                                                                    id="expectedamount" class="form-control" required><br>
+                                                                <input type="text" name="expectedamount" id="expectedamount" class="form-control" required><br>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <div class="col">
                                                                 <label>House Number</label><br>
-                                                                <input type="text" name="houseno" id="houseno"
-                                                                    class="form-control"><br>
+                                                                <input type="text" name="houseno" id="houseno" class="form-control"><br>
                                                             </div>
                                                             <div class="col">
                                                                 <label>Amount Paid</label><br>
-                                                                <input type="text" name="amountpaid" id="amountpaid"
-                                                                    class="form-control"><br>
+                                                                <input type="text" name="amountpaid" id="amountpaid" class="form-control"><br>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <div class="col">
                                                                 <label class="form-label" for="inputreligion">Billing
                                                                     For</label><br>
-                                                                <select class="form-control" type="billingfor"
-                                                                    name="billingfor">
+                                                                <select class="form-control" type="billingfor" name="billingfor">
                                                                     <option value="">Select Month</option>
                                                                     <option name="religion1">January</option>
                                                                     <option name="religion2">February</option>
@@ -89,31 +82,25 @@
                                                             </div>
                                                             <div class="col">
                                                                 <label>Balance</label><br>
-                                                                <input type="text" name="balance" id="balance"
-                                                                    class="form-control"><br>
+                                                                <input type="text" name="balance" id="balance" class="form-control"><br>
                                                             </div>
                                                         </div>
                                                         <div class="row mb-3">
                                                             <div class="col">
                                                                 <label> Date Paid</label>
-                                                                <input type="date" id="datepaid" name="datepaid"
-                                                                    class="for-control">
+                                                                <input type="date" id="datepaid" name="datepaid" class="for-control">
                                                             </div>
                                                             <div class="col">
                                                                 @php
                                                                     $tenants = DB::table('tenants')->where('houseno', Auth::user()->houseno)->get();  
                                                                 @endphp
-                                                                {{-- <input type="hidden" class="form-control" id="hiddenpostid" name="post_id"> --}}
                                                                 @foreach ($tenants as $tenant )
-
-                                                                
-                                                                <input type="hidden" name="post_id" id="hiddenpostid" value="{{ $tenant->post_id }}" class="form-control"><br>
+                                                                <input type="hidden" name="post_id" value="{{ $tenant->post_id }}" class="form-control"><br>
                                                                 @endforeach
                                                             </div>
                                                         </div>
                                                         <div style="text-align:center;">
-                                                            <button type="submit" class="btn btn-success center"
-                                                                name="submit" id="save">Save</button>
+                                                            <button type="submit" class="btn btn-success center" name="submit" id="save">Save</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -138,10 +125,7 @@
                         </thead>
                         <tbody>
                             @php
-                                $transactions = DB::table('transactions')
-                                    ->where('houseno', Auth::user()->houseno)
-                                    ->get();
-                                // $post = DB::table('tenants')->where('post_id', Auth::user()->post_id)->get();
+                                $transactions = DB::table('transactions')->where('houseno', Auth::user()->houseno)->get();
                             @endphp
                             @foreach ($transactions as $item)
                                 <tr>
@@ -150,36 +134,8 @@
                                     <td>{{ $item->expectedamount }}</td>
                                     <td>{{ $item->amountpaid }}</td>
                                     <td>{{ $item->balance }}</td>
-                                    {{-- <td>{{ $item->post_id }}</td> --}}
                                 </tr>
                             @endforeach
-
-                            {{-- <script>
-                        $(document).ready(function() {
-                            $('.paybtn').click(function() {
-                                var row = $(this).closest('tr');
-                                var exp = row.find('#post_id').text();
-                                $('#hiddenpostid').val(exp);
-                                console.log(exp);
-                            });
-                        });
-                    </script> --}}
-
-                            {{-- <script>
-                        console.log($post);
-                        document.getElementById('save').addEventListener('click', function (){
-                        let name = document.getElementById('name').value
-                        let houseno = document.getElementById('houseno').value
-                        let billingfor = document.getElementById('billingfor').value
-                        let datepaid = document.getElementById('datepaid').value
-                        let expectedamount = document.getElementById('expectedamount').value
-                        let amountpaid = document.getElementById('amountpaid').value
-                        let balance = document.getElementById('balance').value
-                        let post_id = document.getElementById('hiddenpostid').value 
-                      });
-
-                    </script> --}}
-
                         </tbody>
                     </table>
                 </div>

@@ -30,7 +30,7 @@ use App\Http\Controllers\ProfController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','App\Http\Controllers\User\HomeController@index');
+Route::get('/','App\Http\Controllers\user\HomeController@index');
 
 Route::get('post/{post}','App\Http\Controllers\PropertyController@post')->name('post');
 Route::get('post/category/{category}','App\Http\Controllers\user\HomeController@category')->name('category');
@@ -140,7 +140,6 @@ Route::post('agent/transactions/{transaction_id}', [AgentTransactionsController:
 Route::post('transactions/store', [TenantsController::class, 'store']);
 Route::post('home', [TenantsController::class, 'transact']);
 // Route::get('transactions/', [TenantsController::class, 'create']);`
-
 
 
 

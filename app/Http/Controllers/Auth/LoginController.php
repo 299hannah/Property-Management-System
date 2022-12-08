@@ -45,12 +45,6 @@ class LoginController extends Controller
             if ($request->hasSession()) {
                 $request->session()->put('auth.password_confirmed_at', time());
             }
-             // Session::get('email', $user->category);
-            //  $data = $request->input();
-            //  $id = DB::table('agents')->where('email', $data['email'])->first()->post_id;
-            //  session(['post_id' => $id]);
-          
-            // dd($id);
 
             return $this->sendLoginResponse($request);
         }
@@ -59,39 +53,6 @@ class LoginController extends Controller
 
     protected function credentials(Request $request)
     {
-        //     $user2 = 
-        //     DB::table('users')->where('users.id','all')
-        //   ->join('categories', 'categories.id', '=', 'users.id')->get(['categories.name','users.name',]);
-
-        // $user2 = Category::whereNull('category_id')
-        // ->whereHas('users', function ($query) {
-        //     $query->where('id', auth()->user()->id);
-        // })
-        // ->with([
-        //     'categories', 
-        //     'users' => function ($query) {
-        //         $query->where('id', auth()->user()->id);
-        //     }
-        // ])
-        // ->withCount('categories')
-        // ->get();
-        
-       
-        // User::find($id)->categories()->sync($request->category);
-
-        // $user2 = User::join('users', 'users.id', '=', 'categories.id')
-        //     ->join('category_users', 'category_users.user_id', '=', 'users.id')
-        //     ->get(['categories.name', 'users.name',]);
-
-        // $user2 = User::join('users','users.id','=','category_users.user_id')
-        // ->join('category_users', 'category_users.user_id', '=', 'users.id')
-        // ->get(['users.id']);
-
-
-        // $user2 = User::where('email',$request->categories)->first()->category_id;
-
-        // $user2 = User::where('email',$request->email)->first()->category_id;
-        // $user2 = category::where('id',$request->get(array('id')))->first();
         $tenant = Tenant::where('email', $request->email)->first();
         if (count((array)$tenant)) {
 

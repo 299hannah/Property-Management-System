@@ -48,20 +48,6 @@ class LoginController extends Controller
 
 
     public function Login(Request $request){
-        // dd($request->all());
-
-        // Auth::login($user);
-        // $check = $request->all();
-
-        // if(Auth::guard('agent')->attempt(['email'=> $check['email'] , 'password'=> $check['password']  ])){
-        //     // $id = DB::table('agents')->where('email', $request->email)->first()->post_id;
-                
-        //     // session(['post_id'=> $id]);
-        //     // dd($id);
-        //     return redirect()->route('agent.dashboard')->with('success','Agent Logged in Successfully');
-        // }else{
-        //     return back()->with('error','you have inserted invalid credentials try again please');
-        // }
       
 
         {

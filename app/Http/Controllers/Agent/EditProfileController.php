@@ -14,8 +14,6 @@ class EditProfileController extends Controller
 {
     public function update(Request $request)
     {
- 
-      
         $this->validate($request,[
             'name' => ['string', 'max:50'],
             'email' => ['string'],

@@ -1,5 +1,5 @@
  <!-- Navbar -->
- <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+ <nav class="main-header navbar navbar-expand navbar-dark-primary">
      <!-- Left navbar links -->
      <ul class="navbar-nav">
          <li class="nav-item">
@@ -114,13 +114,13 @@
                  <li class="nav-item">
                      <a href="{{ url('admin/vacantrooms') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Vacant Rooms</p>
+                         <p>Paid Rooms</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ url('admin/damagedrooms') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Damaged Rooms</p>
+                         <p>Unpaid Rooms</p>
                      </a>
                  </li>
                  <li class="nav-item">
@@ -131,9 +131,6 @@
                  </li>
                  </li>
              </ul>
-
-
-
          </nav>
      </div>
  </aside>
